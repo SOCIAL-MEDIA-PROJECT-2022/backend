@@ -6,6 +6,14 @@ INSERT INTO users (id, email, password, first_name, last_name) VALUES (
     'User'
 );
 
+INSERT INTO users (id, email, password, first_name, last_name) VALUES (
+    2,
+    'jay@email.com',
+    'password',
+    'Jaylen',
+    'Byrd'
+);
+
 INSERT INTO posts (id, text, image_url, author_id) VALUES (
     10000,
     'The classic',
