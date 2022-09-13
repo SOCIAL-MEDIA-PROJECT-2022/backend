@@ -1,7 +1,6 @@
 package com.revature.models;
 
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +26,8 @@ public class Post {
     private int id;
 	private String text;
 	private String imageUrl;
-	private int likes;
+	@OneToMany(mappedBy="posts")
+	private List<User> users;
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Post> comments;
 	@ManyToOne
