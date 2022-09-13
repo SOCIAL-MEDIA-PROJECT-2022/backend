@@ -1,8 +1,12 @@
 package com.revature.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.support.SecurityContextProvider;
+import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authentication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,8 +40,11 @@ public class FollowerController {
 	}
 	@Authorized
 	@PatchMapping("/follow")
-	public ResponseEntity<Void> follow(@RequestBody int userId){
+	public ResponseEntity<Void> follow(@RequestBody HashMap<String, String> body){
 		//followerService.follow(userId);
+		logger.log(Level.INFO,"authenticated user");
+		logger.log(Level.INFO,"userId: " + body.get("userId"));
+		logger.log(Level.INFO,"followingId: " + body.get("followingId"));
 		return ResponseEntity.ok().build();
 		
 	}
