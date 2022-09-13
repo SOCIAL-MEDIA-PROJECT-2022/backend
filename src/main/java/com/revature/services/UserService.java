@@ -22,4 +22,12 @@ public class UserService {
     public User save(User user) {
         return userRepository.save(user);
     }
+
+	public User saveOrUpdateUser(User u) {
+		// TODO Auto-generated method stub
+		System.out.println(u);
+		userRepository.save(u);
+		System.out.println(u);
+		return userRepository.getById(u.getId());
+	}
 }
