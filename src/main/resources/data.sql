@@ -33,4 +33,13 @@ INSERT INTO posts (id, text, image_url, author_id) VALUES (
 ); 
 
 /*INSERT INTO following (user_id, following_id) VALUES(
-1,2)*/
+	1,2);*/
+
+
+
+
+
+
+
+
+
