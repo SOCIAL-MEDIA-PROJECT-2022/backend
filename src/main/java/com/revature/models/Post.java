@@ -31,4 +31,5 @@ public class Post {
 	private List<Post> comments;
 	@ManyToOne
 	private User author;
+	//private boolean comment = false;
 }
