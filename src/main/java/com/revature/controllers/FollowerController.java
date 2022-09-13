@@ -41,16 +41,18 @@ public class FollowerController {
 	@Authorized
 	@PatchMapping("/follow")
 	public ResponseEntity<Void> follow(@RequestBody HashMap<String, String> body){
-		//followerService.follow(userId);
+		
 		logger.log(Level.INFO,"authenticated user");
 		logger.log(Level.INFO,"userId: " + body.get("userId"));
 		logger.log(Level.INFO,"followingId: " + body.get("followingId"));
+		followerService.follow(body);
 		return ResponseEntity.ok().build();
 		
 	}
 	@Authorized
-	@PatchMapping
-	public ResponseEntity<Void> unFollow(@RequestBody int userId){
+	@PatchMapping("/unfollow")
+	public ResponseEntity<Void> unFollow(@RequestBody HashMap<String, String> body){
+		followerService.unFollow(body);
 		return ResponseEntity.ok().build();
 	}
 
