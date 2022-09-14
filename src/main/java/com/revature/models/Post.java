@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -26,8 +27,8 @@ public class Post {
     private int id;
 	private String text;
 	private String imageUrl;
-	@OneToMany(mappedBy="posts")
-	private List<User> users;
+	@ManyToMany
+	List<User> userslike;
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Post> comments;
 	@ManyToOne
