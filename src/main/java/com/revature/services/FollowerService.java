@@ -31,6 +31,9 @@ public class FollowerService {
 		User currentUser = userRepository.getById(Integer.parseInt(body.get("userId")));
 		
 		Optional <User> following = userRepository.findByEmail(body.get("email"));
+		if(currentUser.getId() == following.get().getId()) {
+			return;
+		}
 		
 		if(body.get("state").equals("follow")) {
 			currentUser.getFollowing().add(following.get());
