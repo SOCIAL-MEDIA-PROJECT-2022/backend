@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,12 +42,14 @@ public class FollowerController {
 	}
 	@Authorized
 	@PatchMapping
-	public ResponseEntity<Void> follow(@RequestBody HashMap<String, String> body){
+	public ResponseEntity<Void> follow(@RequestBody FollowerObject body){
+		
+	
 		
 		logger.log(logLevel,"authenticated user");
-		logger.log(logLevel,"userId: " + body.get("userId"));
-		logger.log(logLevel,"followingId: " + body.get("email"));
-		logger.log(logLevel, "buttonState: " + body.get("state"));
+		logger.log(logLevel,"userId: " + body.getId());
+		logger.log(logLevel,"followingId: " + body.getEmail());
+		logger.log(logLevel, "buttonState: " + body.getState());
 		followerService.follow(body);
 		return ResponseEntity.ok().build();
 		

@@ -26,23 +26,23 @@ public class FollowerService {
 		return null;
 	}
 
-	public void follow(HashMap <String, String> body) {
+	public void follow(FollowerObject body) {
 		
-		User currentUser = userRepository.getById(Integer.parseInt(body.get("userId")));
+		User currentUser = userRepository.getById(body.getId());
 		
-		Optional <User> following = userRepository.findByEmail(body.get("email"));
+		Optional <User> following = userRepository.findByEmail(body.getEmail());
 		if(currentUser.getId() == following.get().getId()) {
 			return;
 		}
 		
-		if(body.get("state").equals("follow")) {
+		if(body.getState().equals("follow")) {
 			currentUser.getFollowing().add(following.get());
 		}
 		else {
 			List<User> newFollowers = new LinkedList<>();
 			
 			for(User u: currentUser.getFollowing()) {
-				if(!u.getEmail().equals(body.get("email"))) {
+				if(!u.getEmail().equals(body.getEmail())) {
 					newFollowers.add(u);
 				}
 				
