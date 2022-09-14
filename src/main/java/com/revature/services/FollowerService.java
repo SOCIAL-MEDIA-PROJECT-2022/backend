@@ -30,13 +30,29 @@ public class FollowerService {
 		
 		User currentUser = userRepository.getById(Integer.parseInt(body.get("userId")));
 		
-		User following = userRepository.getById(Integer.parseInt(body.get("followingId")));
+		Optional <User> following = userRepository.findByEmail(body.get("email"));
 		
-		logger.log(Level.INFO, currentUser.toString());
+		if(body.get("state").equals("follow")) {
+			currentUser.getFollowing().add(following.get());
+		}
+		else {
+			List<User> newFollowers = new LinkedList<>();
+			
+			for(User u: currentUser.getFollowing()) {
+				if(!u.getEmail().equals(body.get("email"))) {
+					newFollowers.add(u);
+				}
+				
+			}
+			currentUser.setFollowing(newFollowers);
+			
+		}
 		
-		logger.log(Level.INFO, following.toString());
+		//logger.log(Level.INFO, currentUser.toString());
 		
-		currentUser.getFollowing().add(following);
+		//logger.log(Level.INFO, following.toString());
+		
+		
 		
 		userRepository.save(currentUser);
 		
