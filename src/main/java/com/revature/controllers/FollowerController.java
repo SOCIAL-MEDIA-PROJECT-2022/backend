@@ -22,11 +22,11 @@ import com.revature.models.User;
 import com.revature.services.FollowerService;
 
 @RestController
-@RequestMapping("/followers")
+@RequestMapping("/follow")
 @CrossOrigin(origins="http://localhost:4200",allowCredentials="true")
 public class FollowerController {
 	private static final Logger logger = Logger.getLogger(FollowerController.class.getName());
-	private static final Level logLevel = Level.FINE;
+	private static final Level logLevel = Level.INFO;
 	private final FollowerService followerService;
 	
 	public FollowerController(FollowerService followerService) {
@@ -34,13 +34,13 @@ public class FollowerController {
 		
 	}
 	@Authorized
-	@GetMapping("/getfollowers")
+	@GetMapping
 	public ResponseEntity<List<FollowerObject>> getFollowers() {
 		return ResponseEntity.ok(this.followerService.getFollowers());
 		
 	}
 	@Authorized
-	@PatchMapping("/follow")
+	@PatchMapping
 	public ResponseEntity<Void> follow(@RequestBody HashMap<String, String> body){
 		
 		logger.log(logLevel,"authenticated user");
