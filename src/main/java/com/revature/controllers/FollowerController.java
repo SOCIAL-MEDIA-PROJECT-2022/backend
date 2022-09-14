@@ -26,6 +26,7 @@ import com.revature.services.FollowerService;
 @CrossOrigin(origins="http://localhost:4200",allowCredentials="true")
 public class FollowerController {
 	private static final Logger logger = Logger.getLogger(FollowerController.class.getName());
+	private static final Level logLevel = Level.FINE;
 	private final FollowerService followerService;
 	
 	public FollowerController(FollowerService followerService) {
@@ -42,18 +43,13 @@ public class FollowerController {
 	@PatchMapping("/follow")
 	public ResponseEntity<Void> follow(@RequestBody HashMap<String, String> body){
 		
-		logger.log(Level.INFO,"authenticated user");
-		logger.log(Level.INFO,"userId: " + body.get("userId"));
-		logger.log(Level.INFO,"followingId: " + body.get("followingId"));
+		logger.log(logLevel,"authenticated user");
+		logger.log(logLevel,"userId: " + body.get("userId"));
+		logger.log(logLevel,"followingId: " + body.get("email"));
+		logger.log(logLevel, "buttonState: " + body.get("state"));
 		followerService.follow(body);
 		return ResponseEntity.ok().build();
 		
-	}
-	@Authorized
-	@PatchMapping("/unfollow")
-	public ResponseEntity<Void> unFollow(@RequestBody HashMap<String, String> body){
-		followerService.unFollow(body);
-		return ResponseEntity.ok().build();
 	}
 
 }
