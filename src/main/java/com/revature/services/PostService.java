@@ -37,7 +37,7 @@ public class PostService {
 
 		Get the post from the database with the postID, get the User from the database with the email --Completed
 
-		Add the user that we retrieved to that post's list of users, update that post in the database
+		Add the user that we retrieved to that post's list of users, update that post in the database --Completed
 
 		Update front end to only send the postID and email of the user
 		 */
