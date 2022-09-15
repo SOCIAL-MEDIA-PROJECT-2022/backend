@@ -9,8 +9,15 @@ INSERT INTO users (id, email, password, first_name, last_name) VALUES (
     2,
     'user@gmail.com',
     'password',
-    'Test',
-    'User'
+    'Joey',
+    'Jefferson'
+    ),
+(
+    3,
+    'Test@gmail.com',
+    'password',
+    'Eugene',
+    'Jones'
     );
 
 
