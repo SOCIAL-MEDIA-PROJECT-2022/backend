@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
 
-import com.revature.models.FollowerObject;
+import com.revature.dtos.FollowRequest;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 @Service
@@ -21,12 +21,12 @@ public class FollowerService {
 		this.userRepository = userRepository;
 	}
 
-	public List<FollowerObject> getFollowers() {
+	public List<FollowRequest> getFollowers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void follow(FollowerObject body) {
+	public void follow(FollowRequest body) {
 		
 		User currentUser = userRepository.getById(body.getId());
 		

@@ -1,4 +1,4 @@
-package com.revature.models;
+package com.revature.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,10 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class FollowerObject {
+public class PostRequest {
 	private Integer id;
-	private String email;
-	private String state;
-	 
 
 }

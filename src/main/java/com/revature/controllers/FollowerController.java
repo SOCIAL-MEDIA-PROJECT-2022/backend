@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.annotations.Authorized;
-import com.revature.models.FollowerObject;
+import com.revature.dtos.FollowRequest;
 import com.revature.models.User;
 import com.revature.services.FollowerService;
 
@@ -36,13 +37,13 @@ public class FollowerController {
 	}
 	@Authorized
 	@GetMapping
-	public ResponseEntity<List<FollowerObject>> getFollowers() {
+	public ResponseEntity<List<FollowRequest>> getFollowers() {
 		return ResponseEntity.ok(this.followerService.getFollowers());
 		
 	}
 	@Authorized
 	@PatchMapping
-	public ResponseEntity<Void> follow(@RequestBody FollowerObject body){
+	public ResponseEntity<Void> follow(@RequestBody FollowRequest body){
 		
 	
 		
