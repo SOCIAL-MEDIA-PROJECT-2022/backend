@@ -26,10 +26,10 @@ public class PostService {
 		return this.postRepository.save(post);
 	}
 
-	public Post updateLikes(LikeRequest request) {
+	public Post updateLikes( int id, String email) {
 
 		/*
-		Request has a user email and postID
+		Request has a user email and postID --Completed
 
 		Get the post from the database with the postID, get the User from the database with the email
 
@@ -37,7 +37,7 @@ public class PostService {
 
 		Update front end to only send the postID and email of the user
 		 */
-
+		
 		//will fix this soon
 		return this.postRepository.save(request);}
 

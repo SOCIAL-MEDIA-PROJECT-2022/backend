@@ -36,6 +36,10 @@ public class PostController {
     @Authorized
     @PatchMapping
     public ResponseEntity<Post> updateLikes(@RequestBody LikeRequest request) {
-        return ResponseEntity.ok(this.postService.updateLikes(request));
+
+                String userEmail = request.getEmail();
+                int postId = request.getPostId();
+
+        return ResponseEntity.ok(this.postService.updateLikes(postId, userEmail));
     }
 }
