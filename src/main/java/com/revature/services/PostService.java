@@ -57,7 +57,7 @@ public class PostService {
 
 		else {
 			//throw a custom runtime exception
-		throw new RuntimeException();
+			throw new RuntimeException();
 	}
 		}
 

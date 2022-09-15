@@ -33,11 +33,8 @@ INSERT INTO posts (id, text, image_url, author_id) VALUES (
     '',
     1
 );
-INSERT INTO posts_likes (post_id, likes_id) VALUES (
-    10001,
-    2
-),
-(
-    10001,
-    1
+
+INSERT INTO likes (id, email) VALUES (
+    10000,
+    'Test@gmail.com'
 );
