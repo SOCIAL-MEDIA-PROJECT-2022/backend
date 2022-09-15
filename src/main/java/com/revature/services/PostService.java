@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.revature.dtos.LikeRequest;
+import com.revature.exceptions.LikesException;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -57,8 +58,10 @@ public class PostService {
 
 		else {
 			//throw a custom runtime exception
-			throw new RuntimeException();
-	}
+
+			throw new LikesException();
+
+		}
 		}
 
 
