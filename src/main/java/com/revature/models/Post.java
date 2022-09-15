@@ -19,6 +19,7 @@ public class Post {
     private int id;
 	private String text;
 	private String imageUrl;
+	//need to change the 2nd record of likes to accept strings to insert emails
 	@OneToMany
 	List<User> likes;
 	@OneToMany(cascade = CascadeType.ALL)

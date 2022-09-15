@@ -37,8 +37,10 @@ public class PostService {
 
 		Update front end to only send the postID and email of the user
 		 */
-		
+
+		postRepository.findById(id);
+		//need to grab user's email
 		//will fix this soon
-		return this.postRepository.save(request);}
+		return this.postRepository.save(null);}
 
 }
