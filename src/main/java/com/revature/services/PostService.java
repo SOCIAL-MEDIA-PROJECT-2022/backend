@@ -1,9 +1,11 @@
 package com.revature.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.revature.dtos.LikeRequest;
 import com.revature.models.User;
+import com.revature.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import com.revature.models.Post;
@@ -13,9 +15,11 @@ import com.revature.repositories.PostRepository;
 public class PostService {
 
 	private PostRepository postRepository;
-	
-	public PostService(PostRepository postRepository) {
+	private UserRepository userRepository;
+
+	public PostService(PostRepository postRepository, UserRepository userRepository) {
 		this.postRepository = postRepository;
+		this.userRepository = userRepository;
 	}
 
 	public List<Post> getAll() {
@@ -26,21 +30,36 @@ public class PostService {
 		return this.postRepository.save(post);
 	}
 
-	public Post updateLikes( int id, String email) {
+	public Post updateLikes(LikeRequest request) {
 
 		/*
 		Request has a user email and postID --Completed
 
-		Get the post from the database with the postID, get the User from the database with the email
+		Get the post from the database with the postID, get the User from the database with the email --Completed
 
 		Add the user that we retrieved to that post's list of users, update that post in the database
 
 		Update front end to only send the postID and email of the user
 		 */
 
-		postRepository.findById(id);
-		//need to grab user's email
-		//will fix this soon
-		return this.postRepository.save(null);}
+		Optional<Post> post = postRepository.findById(request.getPostId());
+		Optional<User> user = userRepository.findByEmail(request.getEmail());
+
+		//Checking if the user and post exists in the database
+		if (post.isPresent() && user.isPresent()){
+			//Once we ensured that they've existed by getting the list of likes which is a list of users
+			//add user to that list of likes
+			post.get().getLikes().add(user.get());
+		}
+		if (post.isPresent()){
+			//saves the information into the database
+			return this.postRepository.save(post.get());}
+
+		else {
+			//throw a custom runtime exception
+		throw new RuntimeException();
+	}
+		}
+
 
 }
