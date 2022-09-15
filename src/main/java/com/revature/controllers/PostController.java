@@ -2,15 +2,10 @@ package com.revature.controllers;
 
 import java.util.List;
 
+import com.revature.dtos.LikeRequest;
+import com.revature.models.User;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.revature.annotations.Authorized;
 import com.revature.models.Post;
@@ -37,5 +32,10 @@ public class PostController {
     @PutMapping
     public ResponseEntity<Post> upsertPost(@RequestBody Post post) {
     	return ResponseEntity.ok(this.postService.upsert(post));
+    }
+    @Authorized
+    @PatchMapping
+    public ResponseEntity<Post> updateLikes(@RequestBody LikeRequest request) {
+        return ResponseEntity.ok(this.postService.updateLikes(request));
     }
 }
