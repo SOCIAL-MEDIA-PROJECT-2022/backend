@@ -49,11 +49,19 @@ public class PostService {
 
 		//Checking if the user and post exists in the database
 		if (post.isPresent() && user.isPresent()){
+
+			if(post.get().getLikes().contains(user.get())){
+				// should remove the users like
+				post.get().getLikes().remove(user.get());
+
+			}
 			//Once we ensured that they've existed by getting the list of likes which is a list of users
 			//add user to that list of likes
-			post.get().getLikes().add(user.get());
+			else {
+				post.get().getLikes().add(user.get());
+			}
 		}
-		System.out.print("value present, above present method");
+		System.out.println("value present, above present method");
 		if (post.isPresent()){
 			//saves the information into the database
 			System.out.print("value present");
