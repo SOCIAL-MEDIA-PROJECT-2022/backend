@@ -1,6 +1,9 @@
 package com.revature.services;
 
+
 import java.util.LinkedList;
+
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +22,7 @@ public class SearchService {
 	    
 	    
 	    
+
 	public List<User> search(String s) {
 		
 		List<User> userList = userRepository.findAll();
@@ -32,6 +36,7 @@ public class SearchService {
 		return matchingUser;
 		
 		//return userRepository.findAll();
+
 		
 		 
 	}

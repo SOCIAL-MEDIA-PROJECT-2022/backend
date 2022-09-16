@@ -1,11 +1,14 @@
 package com.revature;
 
 import org.junit.jupiter.api.Test;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 import java.util.List;
 import java.util.logging.Level;
@@ -14,7 +17,9 @@ import java.util.logging.Logger;
 import com.revature.controllers.SearchController;
 import com.revature.models.User;
 import com.revature.services.SearchService;
+
 import com.revature.services.UserService;
+
 
 @SpringBootTest
 class SearchTest {
@@ -28,9 +33,11 @@ class SearchTest {
 	@Autowired
 	private SearchService searchService;
 	
+
 	@Autowired
 	private UserService userService;
 	
+
 	@Test
 	public void contextLoads() throws Exception {
 		assertThat(controller).isNotNull();
@@ -44,7 +51,9 @@ class SearchTest {
 		List<User> userList = searchService.search(pattern);
 		assertThat(userList != null);
 		for(User u : userList) {
+
 			assertTrue(u.getEmail().contains(pattern));
+
 		}
 	}
 	
@@ -56,6 +65,7 @@ class SearchTest {
 		List<User> userList = searchService.search(pattern);
 		assertThat(userList != null);
 		for(User u : userList) {
+
 			assertTrue(u.getEmail().contains(pattern));
 		}
 	}
@@ -74,6 +84,12 @@ class SearchTest {
 		assertThat(userList != null);
 		for(User u : userList) {
 			assertTrue(u.getEmail().contains(pattern));
+
+			
+			logger.log(logLevel, u.toString());
+			
+			
+
 		}
 	}
 	
