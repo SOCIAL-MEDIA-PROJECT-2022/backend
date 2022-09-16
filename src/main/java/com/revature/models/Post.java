@@ -28,7 +28,7 @@ public class Post {
 	@JoinTable(
 			name = "likes",
 			joinColumns = @JoinColumn(name = "id"),
-			inverseJoinColumns = @JoinColumn(name = "email"/*,  referencedColumnName = "email"*/)
+			inverseJoinColumns = @JoinColumn(name = "email" /*, referencedColumnName = "email"*/)
 	)
 	public List<User> likes;
 }
