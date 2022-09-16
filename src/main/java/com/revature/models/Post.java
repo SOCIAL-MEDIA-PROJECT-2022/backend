@@ -24,7 +24,7 @@ public class Post {
 	@ManyToOne
 	private User author;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable(
 			name = "likes",
 			joinColumns = @JoinColumn(name = "id"),
