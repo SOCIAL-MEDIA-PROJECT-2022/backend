@@ -26,7 +26,7 @@ public class Profile {
     private String aboutMe;
     private String hobbies;
     private String somethingElse;
-    private String anotherElse;
+    private String profilePic;
     
     @OneToOne(cascade = CascadeType.ALL)
     
