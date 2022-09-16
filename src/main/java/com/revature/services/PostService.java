@@ -42,7 +42,7 @@ public class PostService {
 
 		Update front end to only send the postID and email of the user
 		 */
-
+		System.out.println(request);
 		Optional<Post> post = postRepository.findById(request.getPostId());
 		//Optional<User> user = userRepository.findByEmail(request.getEmail());
 		Optional<User> user = userRepository.findById(request.getUserId());
@@ -61,7 +61,7 @@ public class PostService {
 				post.get().getLikes().add(user.get());
 			}
 		}
-		System.out.println("value present, above present method");
+
 		if (post.isPresent()){
 			//saves the information into the database
 			System.out.print("value present");
@@ -70,9 +70,9 @@ public class PostService {
 		else {
 			//throw a custom runtime exception
 
-			throw new LikesException();
+			//throw new LikesException();
 			//saves the information into the database
-			//return this.postRepository.save(post.get());
+			return this.postRepository.save(post.get());
 		}
 		}
 

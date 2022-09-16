@@ -36,5 +36,5 @@ INSERT INTO posts (id, text, image_url, author_id) VALUES (
 
 INSERT INTO likes (id, email) VALUES (
     10000,
-    2
+    1
 );
