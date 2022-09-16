@@ -30,5 +30,7 @@ public class Post {
 			joinColumns = @JoinColumn(name = "id"),
 			inverseJoinColumns = @JoinColumn(name = "email" /*, referencedColumnName = "email"*/)
 	)
+	//Inverse column makes a fuss when I try to label it as userId
+	//Additionally inverse column makes a fuss when we try to reference the appropriate column
 	public List<User> likes;
 }

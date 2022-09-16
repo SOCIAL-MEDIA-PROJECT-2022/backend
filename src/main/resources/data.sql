@@ -1,19 +1,16 @@
-INSERT INTO users (id, email, password, first_name, last_name) VALUES (
-    1,
+INSERT INTO users (email, password, first_name, last_name) VALUES (
     'testuser@gmail.com',
     'password',
     'Test',
     'User'
 ),
 (
-    2,
     'user@gmail.com',
     'password',
     'Joey',
     'Jefferson'
     ),
 (
-    3,
     'Test@gmail.com',
     'password',
     'Eugene',
