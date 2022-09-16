@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -39,7 +40,7 @@ class SearchTest {
 		List<User> userList = searchService.search(pattern);
 		assertThat(userList != null);
 		for(User u : userList) {
-			assertThat(u.getEmail().contains(pattern));
+			assertTrue(u.getEmail().contains(pattern));
 		}
 	}
 	
@@ -51,10 +52,7 @@ class SearchTest {
 		List<User> userList = searchService.search(pattern);
 		assertThat(userList != null);
 		for(User u : userList) {
-			
-			logger.log(logLevel, u.toString());
-			
-			assertThat(u.getEmail().contains(pattern));
+			assertTrue(u.getEmail().contains(pattern));
 		}
 	}
 	
