@@ -1,8 +1,6 @@
 server:
   port: 8080
 spring:
-  logging:
-    level.root: debug	
   jpa:
     hibernate:
       ddl-auto: create-drop
