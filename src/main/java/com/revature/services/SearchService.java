@@ -1,8 +1,12 @@
 package com.revature.services;
 
 
+
 import java.util.LinkedList;
 
+
+
+import java.util.LinkedList;
 
 import java.util.List;
 
@@ -36,6 +40,8 @@ public class SearchService {
 		}
 		return matchingUser;
 		
+		//return userRepository.findAll();
+
 		//return userRepository.findAll();
 
 

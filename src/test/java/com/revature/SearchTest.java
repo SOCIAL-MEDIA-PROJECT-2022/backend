@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 import com.revature.controllers.SearchController;
 import com.revature.models.User;
 import com.revature.services.SearchService;
+import com.revature.services.UserService;
 
 import com.revature.services.UserService;
 
@@ -35,9 +36,11 @@ class SearchTest {
 	private SearchService searchService;
 	
 
+
 	@Autowired
 	private UserService userService;
 	
+
 
 	@Test
 	public void contextLoads() throws Exception {
@@ -95,6 +98,23 @@ class SearchTest {
 		
 			assertTrue(u.getEmail().contains(pattern));
 
+		}
+	}
+	
+	@Test
+	public void addAndSearch() throws Exception {
+		
+		String pattern = "am";
+		
+		User newUser = new User(1,"james@email.com", "password", "james", "walker" );
+		
+		userService.save(newUser);
+		
+		List<User> userList = searchService.search(pattern);
+		
+		assertThat(userList != null);
+		for(User u : userList) {
+			assertTrue(u.getEmail().contains(pattern));
 		}
 	}
 	
