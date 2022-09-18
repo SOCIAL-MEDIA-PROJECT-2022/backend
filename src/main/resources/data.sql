@@ -1,28 +1,28 @@
-INSERT INTO users (id, email, password, first_name, last_name) VALUES (
-    1,
-    'testuser@gmail.com',
-    'password',
-    'Test',
-    'User'
-);
-
-INSERT INTO users (id, email, password, first_name, last_name) VALUES (
-    2,
-    'j@io.com',
-    '123',
-    'Jammin',
-    'Yammin'
-);
+insert into users (id, email, password, first_name, last_name) values (1, 'j@lo.net', '123', 'Jay', 'Cuttin');
+insert into users (id, email, password, first_name, last_name) values (2, 'paubray1@smh.com.au', 'wCfISFdKj', 'Powell', 'Aubray');
+insert into users (id, email, password, first_name, last_name) values (3, 'acottee2@studiopress.com', 'YPjMdMeB', 'Amanda', 'Cottee');
+insert into users (id, email, password, first_name, last_name) values (4, 'gmacenzy3@so-net.ne.jp', 'raawXl2wg1', 'Granger', 'Macenzy');
+insert into users (id, email, password, first_name, last_name) values (5, 'csillitoe4@skype.com', 'Nd4HkI1D0', 'Cele', 'Sillitoe');
+insert into users (id, email, password, first_name, last_name) values (6, 'cstaton5@va.gov', 'xNen20G4Lc', 'Cinderella', 'Staton');
+insert into users (id, email, password, first_name, last_name) values (7, 'ytrumper6@fda.gov', 'zbVtvRFJL', 'Yolane', 'Trumper');
+insert into users (id, email, password, first_name, last_name) values (8, 'eravilus7@scientificamerican.com', 'VymT9pccIj', 'Erena', 'Ravilus');
+insert into users (id, email, password, first_name, last_name) values (9, 'akondratenko8@arstechnica.com', 'W1EJ4jy', 'Ariana', 'Kondratenko');
+insert into users (id, email, password, first_name, last_name) values (10, 'mflowitt9@paginegialle.it', 'sCTedqKuz', 'Mella', 'Flowitt');
 
 INSERT INTO posts (id, text, image_url, author_id) VALUES (
-    10000,
-    'The classic',
-    'https://i.imgur.com/fhgzVEt.jpeg',
-    1
-),
-(
-    10001,
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    '',
-    1
-); 
+ 1, 'Insertion of Radioactive Element into Right Nipple, External Approach', 'FungalCx1.png', 5),
+(2, 'Bypass Right Axillary Artery to Bilateral Upper Arm Artery, Open Approach', 'FungalCx2.png', 1),
+(3, 'Occlusion of Jejunum, Percutaneous Endoscopic Approach', 'FungalCx3.png', 2),
+(4, 'Restriction of Pancreatic Duct with Extraluminal Device, Open Approach', 'FungalCx4.png', 6),
+(5, 'Revision of Synthetic Substitute in Right Tibia, Percutaneous Endoscopic Approach', 'FungalCx5.png', 5),
+(6, 'Removal of Synthetic Substitute from Left Tarsal, Percutaneous Approach', 'FungalCx6.png', 1),
+(7, 'Transfer Right Upper Leg Tendon, Open Approach', 'FungalCx7.png', 1),
+(8, 'Reattachment of Right Large Intestine, Open Approach', 'FungalCx8.png', 10),
+(9, 'Reposition Left Shoulder Joint with Internal Fixation Device, Percutaneous Endoscopic Approach', 'FungalCx9.png', 5),
+(10, 'Drainage of Thoracic Vertebral Joint, Percutaneous Endoscopic Approach, Diagnostic', 'FungalCx10.png', 8),
+(11, 'Occlusion of Right Radial Artery, Percutaneous Endoscopic Approach', 'FungalCx11.png', 3),
+(12, 'Supplement Left Tunica Vaginalis with Autologous Tissue Substitute, Percutaneous Endoscopic Approach', 'FungalCx12.png', 6),
+(13, 'Restriction of Mesenteric Lymphatic with Extraluminal Device, Open Approach', 'FungalCx13.png', 8),
+(14, 'Stereotactic Particulate Radiosurgery of Pelvis Lymphatics', 'FungalCx14.png000000', 8),
+(15, 'Revision of Nonautologous Tissue Substitute in Right Metatarsal, External Approach', 'FungalCx13.png', 8),
+(16, 'Release Left Lower Extremity Bursa and Ligament, Open Approach', 'FungalCx12.png', 1);
