@@ -61,9 +61,7 @@ public class PostService {
 				post.get().getLikes().add(user.get());
 			}
 		}
-
-
-		System.out.print("value present, above present method");
+		
 		if (post.isPresent()){
 			//saves the information into the database
 			System.out.print("value present");
