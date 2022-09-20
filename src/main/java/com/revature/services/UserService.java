@@ -1,5 +1,6 @@
 package com.revature.services;
 
+import com.revature.dtos.ResetPasswordRequest;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -21,5 +22,14 @@ public class UserService {
 
     public User save(User user) {
         return userRepository.save(user);
+    }
+
+    public void resetPassword(ResetPasswordRequest resetPasswordRequest) {
+        Optional<User> user = userRepository.findByEmail(resetPasswordRequest.getEmail());
+
+        if(user.isPresent()){
+            user.get().setPassword(resetPasswordRequest.getPassword());
+            userRepository.save(user.get());
+        }
     }
 }
