@@ -34,7 +34,7 @@ public class PostController {
     	return ResponseEntity.ok(this.postService.upsert(post));
     }
     @Authorized
-    @PostMapping("/like")
+    @PatchMapping()
     public ResponseEntity<Post> updateLikes(@RequestBody LikeRequest request) {
         //Controller
        /* request.getPostId();
