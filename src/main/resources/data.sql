@@ -17,7 +17,6 @@ INSERT INTO users (email, password, first_name, last_name) VALUES (
     'Jones'
     );
 
-
 INSERT INTO posts (id, text, image_url, author_id) VALUES (
     10000,
     'The classic',
