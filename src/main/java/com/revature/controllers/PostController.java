@@ -34,11 +34,7 @@ public class PostController {
     	return ResponseEntity.ok(this.postService.upsert(post));
     }
     @Authorized
-<<<<<<< HEAD
-    @PatchMapping
-=======
     @PatchMapping()
->>>>>>> 9456796b8da2020a4e94b08f09253698d1353d04
     public ResponseEntity<Post> updateLikes(@RequestBody LikeRequest request) {
         //Controller
        /* request.getPostId();
