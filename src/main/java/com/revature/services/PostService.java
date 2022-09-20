@@ -32,43 +32,26 @@ public class PostService {
 	}
 
 	public Post updateLikes(LikeRequest request) {
-
-		/*
-		Request has a user email and postID --Completed
-
-		Get the post from the database with the postID, get the User from the database with the email --Completed
-
-		Add the user that we retrieved to that post's list of users, update that post in the database --Completed
-
-		Update front end to only send the postID and email of the user
-		 */
 		System.out.println(request);
 		Optional<Post> post = postRepository.findById(request.getPostId());
-		//Optional<User> user = userRepository.findByEmail(request.getEmail());
 		Optional<User> user = userRepository.findById(request.getUserId());
 
-		//Checking if the user and post exists in the database
 		if (post.isPresent() && user.isPresent()){
 
 			if(post.get().getLikes().contains(user.get())){
-				// should remove the users like
 				post.get().getLikes().remove(user.get());
 
 			}
-			//Once we ensured that they've existed by getting the list of likes which is a list of users
-			//add user to that list of likes
 			else {
 				post.get().getLikes().add(user.get());
 			}
 		}
 
 		if (post.isPresent()){
-			//saves the information into the database
 			System.out.print("value present");
 			return this.postRepository.save(post.get());}
 
 		else {
-			//throw a custom runtime exception
 			throw new LikesException();
 		}
 		}

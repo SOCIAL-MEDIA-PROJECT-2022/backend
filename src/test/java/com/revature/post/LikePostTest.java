@@ -82,8 +82,6 @@ public class LikePostTest {
         assertTrue(optional.isPresent());
         Optional<List<Post>> postsFromUser = this.postRepository.findPostsByAuthor(optional.get());
         assertTrue(postsFromUser.isPresent());
-        System.out.println("numbers posts by user " + postsFromUser.get().size());
-        System.out.println(postsFromUser.get().get(0).getId());
         Optional<User> optionalLike = this.userRepository.findByEmail("testSpringBoot@like.com");
         assertTrue(optionalLike.isPresent());
 
@@ -91,7 +89,6 @@ public class LikePostTest {
 
         // post controller needs to test a request
         Post returnedlike = this.postService.updateLikes(optionalLikeAndOptionalPost);
-        System.out.println(returnedlike.getLikes());
         // AFTER LIKE HAS BEEN SUBMITTED
         assertTrue(returnedlike.getLikes().contains(optionalLike.get()));
 

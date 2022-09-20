@@ -10,6 +10,5 @@ import lombok.*;
 public class LikeRequest {
 
     private int postId;
-    //private String email;
     private int userId;
 }
