@@ -69,12 +69,11 @@ public class PostService {
 
 		else {
 			//throw a custom runtime exception
-
 			throw new LikesException();
-
+		}
 		}
 
+		public Optional <List<Post>> findPostsByAuthor(User u){
+			return this.postRepository.findPostsByAuthor(u);
 		}
-
-
 }

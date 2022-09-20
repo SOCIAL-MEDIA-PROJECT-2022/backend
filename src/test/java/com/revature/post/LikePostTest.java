@@ -1,6 +1,7 @@
 package com.revature.post;
 
 import com.revature.controllers.PostController;
+import com.revature.dtos.LikeRequest;
 import com.revature.models.Post;
 import com.revature.models.User;
 import com.revature.repositories.PostRepository;
@@ -13,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -27,11 +29,17 @@ public class LikePostTest {
     private UserRepository userRepository;
     @Autowired
     private PostController postController;
+    @Autowired
+    private PostService postService;
 
 
     @Test
-    public void contextLoads() throws Exception { assertThat(postRepository).isNotNull(); }
+    public void contextLoads() throws Exception {
+        assertThat(postRepository).isNotNull();
+        assertThat(postService).isNotNull();
+        assertThat(userRepository).isNotNull();
 
+    }
     @Test
     public void createUserForLike() {
         userRepository.save(new User(0,"testSpringBoot@like.com","password",
@@ -50,7 +58,7 @@ public class LikePostTest {
     }
 
     @Test
-    public void createAPostTest(){
+    public void createAPostTest() {
         Optional<User> optional = this.userRepository.findByEmail("testSpringBoot@post.com");
         assertTrue(optional.isPresent());
         assertEquals("testSpringBoot@post.com", optional.get().getEmail());
@@ -60,7 +68,32 @@ public class LikePostTest {
     }
 
     @Test
-    public void likePost(){
+    public void getAllPosts(){
+        Optional<List<Post>> allPosts = this.postRepository.findAllByTextNotNull();
+        assertTrue(allPosts.isPresent());
+        System.out.println(allPosts.get().size());
+        for (Post p: allPosts.get())
+            System.out.println(p.getText());
+    }
+
+    @Test
+    public void likePost() {
+        Optional<User> optional = this.userRepository.findByEmail("testSpringBoot@post.com");
+        assertTrue(optional.isPresent());
+        Optional<List<Post>> postsFromUser = this.postRepository.findPostsByAuthor(optional.get());
+        assertTrue(postsFromUser.isPresent());
+        System.out.println("numbers posts by user " + postsFromUser.get().size());
+        System.out.println(postsFromUser.get().get(0).getId());
+        Optional<User> optionalLike = this.userRepository.findByEmail("testSpringBoot@like.com");
+        assertTrue(optionalLike.isPresent());
+
+        LikeRequest optionalLikeAndOptionalPost = new LikeRequest(postsFromUser.get().get(0).getId(), optionalLike.get().getId());
+
+        // post controller needs to test a request
+        Post returnedlike = this.postService.updateLikes(optionalLikeAndOptionalPost);
+        System.out.println(returnedlike.getLikes());
+        // AFTER LIKE HAS BEEN SUBMITTED
+        assertTrue(returnedlike.getLikes().contains(optionalLike.get()));
 
     }
 
