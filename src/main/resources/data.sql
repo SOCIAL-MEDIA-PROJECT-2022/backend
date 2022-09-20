@@ -16,6 +16,10 @@ INSERT INTO users (email, password, first_name, last_name) VALUES (
     'Eugene',
     'Jones'
     );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9456796b8da2020a4e94b08f09253698d1353d04
 
 INSERT INTO posts (id, text, image_url, author_id) VALUES (
     10000,

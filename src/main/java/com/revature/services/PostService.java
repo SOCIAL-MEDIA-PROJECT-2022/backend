@@ -70,10 +70,10 @@ public class PostService {
 		else {
 			//throw a custom runtime exception
 
-			//throw new LikesException();
-			//saves the information into the database
-			return this.postRepository.save(post.get());
+			throw new LikesException();
+
 		}
+
 		}
 
 
