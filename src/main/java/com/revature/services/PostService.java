@@ -32,7 +32,7 @@ public class PostService {
 	}
 
 	public Post updateLikes(LikeRequest request) {
-		System.out.println(request);
+
 		Optional<Post> post = postRepository.findById(request.getPostId());
 		Optional<User> user = userRepository.findById(request.getUserId());
 
@@ -48,7 +48,7 @@ public class PostService {
 		}
 
 		if (post.isPresent()){
-			System.out.print("value present");
+
 			return this.postRepository.save(post.get());}
 
 		else {
