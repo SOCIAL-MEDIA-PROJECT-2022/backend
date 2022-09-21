@@ -59,7 +59,7 @@ public class AuthController {
     @Authorized
     @PatchMapping("/resetPassword")
     public ResponseEntity<Void> resetPassword(@RequestBody ResetPasswordRequest resetPasswordRequest) {
-        authService.resetPassWord(resetPasswordRequest);
+        authService.resetPassword(resetPasswordRequest);
         return ResponseEntity.ok().build();
 
 
