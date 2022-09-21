@@ -33,10 +33,10 @@ private final ProfileService profileService;
 		this.profileService = profileService;
 	}
 	
-	@PutMapping("/update")
-	public Profile updateProfile(@RequestBody Profile p) {
-		return profileService.saveOrUpdateProfile(p);
-	}
+	//@PutMapping("/update")
+	//public Profile updateProfile(@RequestBody Profile p) {
+	//	return profileService.saveOrUpdateProfile(p);
+	//}
 
 	
 	@Authorized
