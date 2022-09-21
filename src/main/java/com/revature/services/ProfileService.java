@@ -3,6 +3,7 @@ package com.revature.services;
 
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -38,20 +39,22 @@ public class ProfileService {
 			return this.profileRepository.findAll();
 		}
 		
-		public List<Profile> getById(int id){
+		public Profile getById(int id){
 			
 			List<Profile> profileList = profileRepository.findAll();
+			List<Profile> profile = new ArrayList<>();
 			
-			List<Profile> matchingProfile = new LinkedList<>();
 			
 			for(Profile p: profileList) {
 				if(p.getUser().getId() == id) {
-					matchingProfile.add(p);
+					profile.add(p);
+					
 				}
-				
 			}
 			
-			return matchingProfile;
+			return profile.get(0);
+			
+			
 		}
 
 }

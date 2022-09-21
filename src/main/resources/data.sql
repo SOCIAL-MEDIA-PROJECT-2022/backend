@@ -1,4 +1,4 @@
-insert into users (id, email, password, first_name, last_name) values (1, 'j@lo.net', '123', 'Jay', 'Cuttin');
+insert into users (id, email, password, first_name, last_name) values (1, 'testuser@gmail.com', 'password', 'Test', 'User');
 insert into users (id, email, password, first_name, last_name) values (2, 'paubray1@smh.com.au', 'wCfISFdKj', 'Powell', 'Aubray');
 insert into users (id, email, password, first_name, last_name) values (3, 'acottee2@studiopress.com', 'YPjMdMeB', 'Amanda', 'Cottee');
 insert into users (id, email, password, first_name, last_name) values (4, 'gmacenzy3@so-net.ne.jp', 'raawXl2wg1', 'Granger', 'Macenzy');

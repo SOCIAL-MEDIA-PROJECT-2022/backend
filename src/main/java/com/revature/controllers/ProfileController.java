@@ -41,7 +41,7 @@ private final ProfileService profileService;
 	
 	@Authorized
 	@GetMapping("/{id}")
-	public ResponseEntity<List<Profile>> getProfile(@PathVariable int id){
+	public ResponseEntity<Profile>getProfile(@PathVariable int id){
 		return ResponseEntity.ok(this.profileService.getById(id));
 		
 	}
