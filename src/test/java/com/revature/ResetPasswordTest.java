@@ -15,7 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.revature.controllers.AuthController;
 import com.revature.models.User;
-import com.revature.services.AuthService;
 
 @SpringBootTest
 class ResetPasswordTest {
@@ -25,9 +24,6 @@ class ResetPasswordTest {
 
     @Autowired
     private AuthController controller;
-
-    @Autowired
-    private AuthService authService;
 
     @Autowired
     private UserRepository userRepository;
