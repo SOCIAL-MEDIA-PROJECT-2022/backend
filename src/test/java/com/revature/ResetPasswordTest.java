@@ -2,6 +2,8 @@
 package com.revature;
 import com.revature.dtos.ResetPasswordRequest;
 import com.revature.repositories.UserRepository;
+import com.revature.services.AuthService;
+import com.revature.services.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,6 +30,12 @@ class ResetPasswordTest {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private AuthService authService;
+
 
     @Test
     public void contextLoads() throws Exception {
@@ -38,8 +46,8 @@ class ResetPasswordTest {
     public void resetPassword() throws Exception {
 
         ResetPasswordRequest resetPasswordRequest = new ResetPasswordRequest("testuser@gmail.com", "king");
-
         Optional<User> user = userRepository.findByEmail(resetPasswordRequest.getEmail());
+
         if (user.isPresent()) {
             user.get().setPassword(resetPasswordRequest.getPassword());
             userRepository.save(user.get());
@@ -51,6 +59,32 @@ class ResetPasswordTest {
             for (String u : passwordList) {
                 assertTrue(u.contains(user.get().getPassword()));
             }
+        }
+    }
+
+    @Test
+    public void resetPassUserServiceTest() throws Exception {
+
+        ResetPasswordRequest resetPasswordRequest = new ResetPasswordRequest("testuser@gmail.com", "boss");
+        userService.resetPassword(resetPasswordRequest);
+
+        Optional<User> user = userRepository.findByEmail(resetPasswordRequest.getEmail());
+        if (user.isPresent()) {
+            assertTrue(user.get().getPassword().equals("boss"));
+        }
+
+    }
+
+
+    @Test
+    public void resetPassAuthServiceTest() throws Exception {
+
+        ResetPasswordRequest resetPasswordRequest = new ResetPasswordRequest("testuser@gmail.com", "true");
+        authService.resetPassword(resetPasswordRequest);
+
+        Optional<User> user = userRepository.findByEmail(resetPasswordRequest.getEmail());
+        if (user.isPresent()) {
+            assertTrue(user.get().getPassword().equals("true"));
         }
     }
 }
