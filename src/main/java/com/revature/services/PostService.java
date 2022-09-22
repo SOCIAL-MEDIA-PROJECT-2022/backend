@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import org.springframework.stereotype.Service;
 
 import com.revature.dtos.PostRequest;
+import com.revature.models.FollowerObject;
 import com.revature.models.Post;
 import com.revature.models.User;
 import com.revature.repositories.PostRepository;
@@ -39,7 +40,7 @@ public class PostService {
 		
 		
 		
-		for(User u : user.get().getFollowing()) {
+		for(FollowerObject u : user.get().getFollowing()) {
 			followingId.add(u.getId());
 		}
 		followingId.add(user.get().getId());

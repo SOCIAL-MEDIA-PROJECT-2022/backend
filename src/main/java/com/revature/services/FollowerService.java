@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import org.springframework.stereotype.Service;
 
 import com.revature.dtos.FollowRequest;
+import com.revature.models.FollowerObject;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 @Service
@@ -36,12 +37,12 @@ public class FollowerService {
 		}
 		
 		if(body.getState().equals("follow")) {
-			currentUser.getFollowing().add(following.get());
+			currentUser.getFollowing().add(new FollowerObject(following.get().getId(), following.get().getEmail()));
 		}
 		else {
-			List<User> newFollowers = new LinkedList<>();
+			List<FollowerObject> newFollowers = new LinkedList<>();
 			
-			for(User u: currentUser.getFollowing()) {
+			for(FollowerObject u: currentUser.getFollowing()) {
 				if(!u.getEmail().equals(body.getEmail())) {
 					newFollowers.add(u);
 				}
@@ -63,21 +64,7 @@ public class FollowerService {
 		
 	}
 	
-	public void unFollow(HashMap <String, String> body) {
-		
-		User currentUser = userRepository.getById(Integer.parseInt(body.get("userId")));
-		
-		List<User> newFollowers = new LinkedList<>();
-		
-		for(User u: currentUser.getFollowing()) {
-			if(u.getId() != Integer.parseInt(body.get("followingId"))) {
-				newFollowers.add(u);
-			}
-			
-		}
-		currentUser.setFollowing(newFollowers);
-		userRepository.save(currentUser);
-	}
+	
 	
 	
 	
