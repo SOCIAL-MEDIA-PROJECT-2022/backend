@@ -45,9 +45,7 @@ public class SearchService {
 		//return userRepository.findAll();
 
 
-	public List<User> search(String s) {
-		
-		return userRepository.findByEmailContains(s);
+	
 
 		 
 	}
