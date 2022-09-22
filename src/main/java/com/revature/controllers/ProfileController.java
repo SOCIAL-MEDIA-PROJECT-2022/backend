@@ -32,18 +32,10 @@ private final ProfileService profileService;
 	public ProfileController( ProfileService profileService) {
 		this.profileService = profileService;
 	}
-	
-	//@PutMapping("/update")
-	//public Profile updateProfile(@RequestBody Profile p) {
-	//	return profileService.saveOrUpdateProfile(p);
-	//}
-
-	
 	@Authorized
 	@GetMapping("/{id}")
 	public ResponseEntity<Profile>getProfile(@PathVariable int id){
 		return ResponseEntity.ok(this.profileService.getById(id));
-		
 	}
 
 

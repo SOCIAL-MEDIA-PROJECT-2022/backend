@@ -11,31 +11,25 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-	
+
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "profile")
+@Setter
 public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private int userId;
     private String aboutMe;
     private String hobbies;
     private String somethingElse;
     private String profilePic;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    
-    private User user;
-    
-    
-    
-    
-    
 }
 
 

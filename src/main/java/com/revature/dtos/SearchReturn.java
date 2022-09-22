@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SearchReturn {
-	
 	private int id;
 	private String email;
 	private String firstName;

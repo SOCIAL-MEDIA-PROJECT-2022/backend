@@ -1,26 +1,21 @@
 package com.revature;
 
+import com.revature.controllers.SearchController;
+import com.revature.dtos.SearchReturn;
+import com.revature.models.Profile;
+import com.revature.models.User;
+import com.revature.services.SearchService;
+import com.revature.services.UserService;
 import org.junit.jupiter.api.Test;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.revature.controllers.SearchController;
-import com.revature.models.User;
-import com.revature.services.SearchService;
-import com.revature.services.UserService;
-
-import com.revature.services.UserService;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @SpringBootTest
@@ -43,18 +38,18 @@ class SearchTest {
 
 
 	@Test
-	public void contextLoads() throws Exception {
+	public void contextLoads(){
 		assertThat(controller).isNotNull();
 	}
 	
 	@Test
-	public void search() throws Exception {
+	public void search() {
 		
 		String pattern = "test";
 		
-		List<User> userList = searchService.search(pattern);
+		List<SearchReturn> userList = searchService.search(pattern);
 		assertThat(userList != null);
-		for(User u : userList) {
+		for(SearchReturn u : userList) {
 
 
 			assertTrue(u.getEmail().contains(pattern));
@@ -65,13 +60,13 @@ class SearchTest {
 	}
 	
 	@Test
-	public void anotherSearch() throws Exception {
+	public void anotherSearch(){
 		
 		String pattern = "bob";
-		
-		List<User> userList = searchService.search(pattern);
+
+		List<SearchReturn> userList = searchService.search(pattern);
 		assertThat(userList != null);
-		for(User u : userList) {
+		for(SearchReturn u : userList) {
 
 
 			assertTrue(u.getEmail().contains(pattern));
@@ -79,42 +74,24 @@ class SearchTest {
 	}
 	
 	@Test
-	public void addAndSearch() throws Exception {
+	public void addAndSearch(){
 		
 		String pattern = "am";
-		
-		User newUser = new User(1,"james@email.com", "password", "james", "walker" );
-		
+
+		User newUser = new User(1,"james@email.com", "password", "james", "walker",new Profile());
+
 		userService.save(newUser);
-		
-		List<User> userList = searchService.search(pattern);
+
+		List<SearchReturn> userList = searchService.search(pattern);
 		
 		assertThat(userList != null);
-		for(User u : userList) {
+		for(SearchReturn u : userList) {
 			assertTrue(u.getEmail().contains(pattern));
 
-			
 			logger.log(logLevel, u.toString());
 		
 			assertTrue(u.getEmail().contains(pattern));
 
-		}
-	}
-	
-	@Test
-	public void addAndSearch() throws Exception {
-		
-		String pattern = "am";
-		
-		User newUser = new User(1,"james@email.com", "password", "james", "walker" );
-		
-		userService.save(newUser);
-		
-		List<User> userList = searchService.search(pattern);
-		
-		assertThat(userList != null);
-		for(User u : userList) {
-			assertTrue(u.getEmail().contains(pattern));
 		}
 	}
 	
