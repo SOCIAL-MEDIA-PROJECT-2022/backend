@@ -10,11 +10,17 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class AuthController {
+	
+	private static final Logger logger = Logger.getLogger(AuthController.class.getName());
+	private static final Level logLevel = Level.INFO;
+	
 
     private final AuthService authService;
 
@@ -24,6 +30,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody LoginRequest loginRequest, HttpSession session) {
+    	logger.log(logLevel,loginRequest.toString());
+    	
         Optional<User> optional = authService.findByCredentials(loginRequest.getEmail(), loginRequest.getPassword());
 
         if(!optional.isPresent()) {
@@ -31,6 +39,8 @@ public class AuthController {
         }
 
         session.setAttribute("user", optional.get());
+        
+     
 
         return ResponseEntity.ok(optional.get());
     }
@@ -48,7 +58,9 @@ public class AuthController {
                 registerRequest.getEmail(),
                 registerRequest.getPassword(),
                 registerRequest.getFirstName(),
-                registerRequest.getLastName());
+                registerRequest.getLastName(),
+		        registerRequest.getProPict(),
+		        registerRequest.getAboutMe());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(created));
     }
