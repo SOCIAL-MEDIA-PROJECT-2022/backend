@@ -9,6 +9,17 @@ insert into users (id, email, password, first_name, last_name, pro_pict, about_m
 insert into users (id, email, password, first_name, last_name, pro_pict, about_me) values (9,'mflowitt9@paginegialle.it', 'sCTedqKuz', 'Mella', 'Flowitt', 'ProfilePic9.jpg', 'Libero repellat minima ad ipsam, deleniti sint quis sit veniam corporis, ab aspernatur ducimus natus nostrum fuga cum repellendus minus aliquam, delectus a veritatis! ');
 insert into users (id, email, password, first_name, last_name, pro_pict, about_me) values (10,'knowbebe@ilsamora.da', 'cinquen45%', 'Caligula', 'Presley', 'ProfilePic10.jpg', 'Officia a eaque placeat quo. Voluptates molestiae doloribus ratione, aliquam itaque magnam quos facere dignissimos dolorem inventore similique! Ipsam perferendis illo officiis sint.');
 
+insert into users (id, email, password, first_name, last_name) values (1, 'testuser@gmail.com', 'password', 'Test', 'User');
+insert into users (id, email, password, first_name, last_name) values (2, 'paubray1@smh.com.au', 'wCfISFdKj', 'Powell', 'Aubray');
+insert into users (id, email, password, first_name, last_name) values (3, 'acottee2@studiopress.com', 'YPjMdMeB', 'Amanda', 'Cottee');
+insert into users (id, email, password, first_name, last_name) values (4, 'gmacenzy3@so-net.ne.jp', 'raawXl2wg1', 'Granger', 'Macenzy');
+insert into users (id, email, password, first_name, last_name) values (5, 'csillitoe4@skype.com', 'Nd4HkI1D0', 'Cele', 'Sillitoe');
+insert into users (id, email, password, first_name, last_name) values (6, 'cstaton5@va.gov', 'xNen20G4Lc', 'Cinderella', 'Staton');
+insert into users (id, email, password, first_name, last_name) values (7, 'ytrumper6@fda.gov', 'zbVtvRFJL', 'Yolane', 'Trumper');
+insert into users (id, email, password, first_name, last_name) values (8, 'eravilus7@scientificamerican.com', 'VymT9pccIj', 'Erena', 'Ravilus');
+insert into users (id, email, password, first_name, last_name) values (9, 'akondratenko8@arstechnica.com', 'W1EJ4jy', 'Ariana', 'Kondratenko');
+insert into users (id, email, password, first_name, last_name) values (10, 'mflowitt9@paginegialle.it', 'sCTedqKuz', 'Mella', 'Flowitt');
+
 INSERT INTO posts (id, text, image_url, author_id) VALUES (
  1, 'Insertion of Radioactive Element into Right Nipple, External Approach', 'FungalCx1.png', 5),
 (2, 'Bypass Right Axillary Artery to Bilateral Upper Arm Artery, Open Approach', 'FungalCx2.png', 1),
