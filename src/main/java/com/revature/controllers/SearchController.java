@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.annotations.Authorized;
+import com.revature.dtos.SearchReturn;
 import com.revature.models.User;
 import com.revature.services.SearchService;
 
@@ -39,7 +40,7 @@ public class SearchController {
 	
 	 @Authorized
 	 @GetMapping("/{val}")
-	 public ResponseEntity<List<User>> search(@PathVariable String  val){
+	 public ResponseEntity<List<SearchReturn>> search(@PathVariable String  val){
 		 
 		 logger.log(logLevel,"made it with : " + val);	 
 		 return ResponseEntity.ok(this.searchService.search(val));

@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.revature.dtos.SearchReturn;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 
@@ -28,14 +29,14 @@ public class SearchService {
 	    
 
 
-	public List<User> search(String s) {
+	public List<SearchReturn> search(String s) {
 		
 		List<User> userList = userRepository.findAll();
 		
-		List<User> matchingUser = new LinkedList<>();
+		List<SearchReturn> matchingUser = new LinkedList<>();
 		for(User u: userList) {
 			if(u.getEmail().contains(s)) {
-				matchingUser.add(u);
+				matchingUser.add(new SearchReturn(u.getId(), u.getEmail(), u.getFirstName(), u.getLastName()));
 			}
 		}
 		return matchingUser;
