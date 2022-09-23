@@ -78,7 +78,7 @@ class SearchTest {
 		
 		String pattern = "am";
 
-		User newUser = new User(1,"james@email.com", "password", "james", "walker",new Profile());
+		User newUser = new User(1,"james@email.com", "password", "james", "walker");
 
 		userService.save(newUser);
 

@@ -25,7 +25,7 @@ public class updateUserTest {
     
     @Test
     public void updateUser() throws Exception{
-    	User u = new User(1, "email@email.com", "password", "Jay", "Byrd", new Profile());
+    	User u = new User(1, "email@email.com", "password", "Jay", "Byrd");
     	userService.saveOrUpdateUser(u);
     	Optional<User> user = userRepository.findByEmail(u.getEmail());
     	
