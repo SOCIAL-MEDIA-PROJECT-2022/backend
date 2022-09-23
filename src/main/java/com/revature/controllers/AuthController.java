@@ -34,15 +34,10 @@ public class AuthController {
     	logger.log(logLevel,loginRequest.toString());
     	
         Optional<User> optional = authService.findByCredentials(loginRequest.getEmail(), loginRequest.getPassword());
-
         if(!optional.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
-
         session.setAttribute("user", optional.get());
-        
-     
-
         return ResponseEntity.ok(optional.get());
     }
 
