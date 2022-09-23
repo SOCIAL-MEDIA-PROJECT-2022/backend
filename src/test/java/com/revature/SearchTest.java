@@ -1,37 +1,23 @@
 package com.revature;
 
+import com.revature.controllers.SearchController;
+import com.revature.dtos.SearchReturn;
+import com.revature.models.Profile;
+import com.revature.models.User;
+import com.revature.services.SearchService;
+import com.revature.services.UserService;
 import org.junit.jupiter.api.Test;
-<<<<<<< HEAD
-=======
-
->>>>>>> 629d2c92227178c47a6abd40b99dd726dfe28705
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-<<<<<<< HEAD
-=======
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-
->>>>>>> 629d2c92227178c47a6abd40b99dd726dfe28705
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.revature.controllers.SearchController;
-import com.revature.models.User;
-import com.revature.services.SearchService;
-import com.revature.services.UserService;
-
-<<<<<<< HEAD
-=======
-import com.revature.services.UserService;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
->>>>>>> 629d2c92227178c47a6abd40b99dd726dfe28705
 @SpringBootTest
 class SearchTest {
 	
@@ -44,11 +30,6 @@ class SearchTest {
 	@Autowired
 	private SearchService searchService;
 	
-<<<<<<< HEAD
-	@Autowired
-	private UserService userService;
-	
-=======
 
 
 	@Autowired
@@ -56,68 +37,57 @@ class SearchTest {
 	
 
 
->>>>>>> 629d2c92227178c47a6abd40b99dd726dfe28705
 	@Test
-	public void contextLoads() throws Exception {
+	public void contextLoads(){
 		assertThat(controller).isNotNull();
 	}
 	
 	@Test
-	public void search() throws Exception {
+	public void search() {
 		
 		String pattern = "test";
 		
-		List<User> userList = searchService.search(pattern);
+		List<SearchReturn> userList = searchService.search(pattern);
 		assertThat(userList != null);
-		for(User u : userList) {
-<<<<<<< HEAD
-			assertTrue(u.getEmail().contains(pattern));
-=======
+		for(SearchReturn u : userList) {
 
 
 			assertTrue(u.getEmail().contains(pattern));
 
 
 
->>>>>>> 629d2c92227178c47a6abd40b99dd726dfe28705
 		}
 	}
 	
 	@Test
-	public void anotherSearch() throws Exception {
+	public void anotherSearch(){
 		
 		String pattern = "bob";
-		
-		List<User> userList = searchService.search(pattern);
+
+		List<SearchReturn> userList = searchService.search(pattern);
 		assertThat(userList != null);
-		for(User u : userList) {
-<<<<<<< HEAD
-=======
+		for(SearchReturn u : userList) {
 
 
->>>>>>> 629d2c92227178c47a6abd40b99dd726dfe28705
 			assertTrue(u.getEmail().contains(pattern));
 		}
 	}
 	
 	@Test
-	public void addAndSearch() throws Exception {
+	public void addAndSearch(){
 		
 		String pattern = "am";
-		
-		User newUser = new User(1,"james@email.com", "password", "james", "walker" );
-		
+
+		User newUser = new User(1,"james@email.com", "password", "james", "walker", "picture", "aboutme");
+
 		userService.save(newUser);
-		
-		List<User> userList = searchService.search(pattern);
+
+		List<SearchReturn> userList = searchService.search(pattern);
 		
 		assertThat(userList != null);
-		for(User u : userList) {
+		for(SearchReturn u : userList) {
 			assertTrue(u.getEmail().contains(pattern));
-<<<<<<< HEAD
-=======
 
-			
 			logger.log(logLevel, u.toString());
 		
 			assertTrue(u.getEmail().contains(pattern));
@@ -125,26 +95,7 @@ class SearchTest {
 		}
 	}
 	
-	@Test
-	public void addAndSearch() throws Exception {
-		
-		String pattern = "am";
-		
-		User newUser = new User(1,"james@email.com", "password", "james", "walker" );
-		
-		userService.save(newUser);
-		
-		List<User> userList = searchService.search(pattern);
-		
-		assertThat(userList != null);
-		for(User u : userList) {
-			assertTrue(u.getEmail().contains(pattern));
->>>>>>> 629d2c92227178c47a6abd40b99dd726dfe28705
-		}
-	}
-	
 }
-	
 
 
 
