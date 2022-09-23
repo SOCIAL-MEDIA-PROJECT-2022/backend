@@ -10,7 +10,7 @@ values (1,
 INSERT INTO profile(id, user_id, about_me, hobbies, something_else, profile_pic)
 values (2,
         2,
-        'about me',
+        'about me test',
         'hobbies',
         'something interesting',
         'https://i.imgur.com/JR6noxf.jpeg');
