@@ -36,6 +36,7 @@ public class UserService {
         u.setLastName(request.getLastName());
         userRepository.save(u);
         return u;
+    }
     public void resetPassword(ResetPasswordRequest resetPasswordRequest) {
         Optional<User> user = userRepository.findByEmail(resetPasswordRequest.getEmail());
 
