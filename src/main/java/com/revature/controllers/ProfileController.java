@@ -8,10 +8,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 @RestController
 @RequestMapping("/profile")
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class ProfileController {
+    private static final Logger logger = Logger.getLogger(ProfileController.class.getName());
+    private static final Level logLevel = Level.INFO;
     private final ProfileService profileService;
 
     public ProfileController(ProfileService profileService) {
@@ -27,6 +32,7 @@ public class ProfileController {
     @Authorized
     @PatchMapping("/update")
     public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile) {
+        logger.log(logLevel,"Got here with: " + profile.toString());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(profileService.saveOrUpdateProfile(profile));
     }
 
