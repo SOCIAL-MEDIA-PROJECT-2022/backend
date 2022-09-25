@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 
 import com.revature.annotations.Authorized;
+import com.revature.dtos.UpdateProfileRequest;
 import com.revature.models.Profile;
 import com.revature.services.ProfileService;
 import org.springframework.http.HttpStatus;
@@ -31,9 +32,9 @@ public class ProfileController {
 
     @Authorized
     @PatchMapping("/update")
-    public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile) {
-        logger.log(logLevel, "Got here with: " + profile.toString());
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(profileService.saveOrUpdateProfile(profile));
+    public ResponseEntity<Profile> updateProfile(@RequestBody UpdateProfileRequest request) {
+        logger.log(logLevel, "Got here with: " + request.toString());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(profileService.saveOrUpdateProfile(request));
     }
 
 }

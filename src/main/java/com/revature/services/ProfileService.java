@@ -1,6 +1,7 @@
 package com.revature.services;
 
 
+import com.revature.dtos.UpdateProfileRequest;
 import com.revature.models.Profile;
 import com.revature.repositories.ProfileRepository;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,17 @@ public class ProfileService {
         this.profileRepository = profileRepository;
     }
 
-    public Profile saveOrUpdateProfile(Profile p) {
-        logger.log(logLevel, p.toString());
+    public Profile saveOrUpdateProfile(UpdateProfileRequest request) {
+        logger.log(logLevel,"Got to profile service");
+        logger.log(logLevel, request.toString());
+        Optional<Profile> profile = profileRepository.findById(request.getId());
+        Profile p = profile.orElse(null);
+        p.setAboutMe(request.getAboutMe());
+        p.setHobbies(request.getHobbies());
+        p.setSomethingElse(request.getSomethingElse());
+        p.setProfilePic(request.getProfilePic());
         profileRepository.save(p);
-        return profileRepository.getById(p.getId());
+        return p;
     }
 
     public List<Profile> getAll() {
