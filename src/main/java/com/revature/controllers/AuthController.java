@@ -1,7 +1,9 @@
 package com.revature.controllers;
 
+import com.revature.annotations.Authorized;
 import com.revature.dtos.LoginRequest;
 import com.revature.dtos.RegisterRequest;
+import com.revature.dtos.ResetPasswordRequest;
 import com.revature.models.User;
 import com.revature.services.AuthService;
 import org.springframework.http.HttpStatus;
@@ -58,5 +60,15 @@ public class AuthController {
                 registerRequest.getLastName()
         );
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(created));
+    }
+
+
+    @Authorized
+    @PatchMapping("/resetPassword")
+    public ResponseEntity<Void> resetPassword(@RequestBody ResetPasswordRequest resetPasswordRequest) {
+        authService.resetPassword(resetPasswordRequest);
+        return ResponseEntity.ok().build();
+
+
     }
 }

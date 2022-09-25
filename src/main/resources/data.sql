@@ -40,3 +40,7 @@ VALUES (10000,
         '',
         1);
 
+INSERT INTO likes (id, email) VALUES (
+    10000,
+    1
+);

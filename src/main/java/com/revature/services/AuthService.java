@@ -1,5 +1,6 @@
 package com.revature.services;
 
+import com.revature.dtos.ResetPasswordRequest;
 import com.revature.models.User;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,9 @@ public class AuthService {
         logger.log(logLevel, "Got here with: ");
         logger.log(logLevel, user.toString());
         return userService.save(user);
+    }
+
+    public void resetPassword (ResetPasswordRequest resetPasswordRequest){
+         userService.resetPassword(resetPasswordRequest);
     }
 }
