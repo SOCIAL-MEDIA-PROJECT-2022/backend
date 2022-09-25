@@ -19,16 +19,14 @@ VALUES (1,
         'testuser@gmail.com',
         'password',
         'Test',
-        'User'
-        );
+        'User');
 
 INSERT INTO users (id, email, password, first_name, last_name)
 VALUES (2,
         'usertest@gmail.com',
         'password',
         'User',
-        'Test'
-       );
+        'Test');
 
 INSERT INTO posts (id, text, image_url, author_id)
 VALUES (10000,

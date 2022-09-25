@@ -32,7 +32,7 @@ public class ProfileController {
     @Authorized
     @PatchMapping("/update")
     public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile) {
-        logger.log(logLevel,"Got here with: " + profile.toString());
+        logger.log(logLevel, "Got here with: " + profile.toString());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(profileService.saveOrUpdateProfile(profile));
     }
 
