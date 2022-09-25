@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import com.revature.dtos.UpdateUserRequest;
+import com.revature.exceptions.UserDoesNotExistException;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -23,11 +25,15 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User saveOrUpdateUser(User u) {
-        // TODO Auto-generated method stub
-        System.out.println(u);
+    public User saveOrUpdateUser(UpdateUserRequest request) {
+        Optional<User> user = userRepository.findById(request.getId());
+        User u = user.orElse(null);
+        if(u == null) throw new UserDoesNotExistException();
+        u.setEmail(request.getEmail());
+        u.setPassword(request.getPassword());
+        u.setFirstName(request.getFirstName());
+        u.setLastName(request.getLastName());
         userRepository.save(u);
-        System.out.println(u);
-        return userRepository.getById(u.getId());
+        return u;
     }
 }

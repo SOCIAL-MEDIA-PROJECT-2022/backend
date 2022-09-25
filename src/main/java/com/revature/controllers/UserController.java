@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import com.revature.annotations.Authorized;
+import com.revature.dtos.UpdateUserRequest;
 import com.revature.models.User;
 import com.revature.services.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +19,8 @@ public class UserController {
 
     @Authorized
     @PutMapping("/update")
-    public User updateUser(@RequestBody User u) {
-        return userService.saveOrUpdateUser(u);
+    public User updateUser(@RequestBody UpdateUserRequest request) {
+        return userService.saveOrUpdateUser(request);
     }
 
 }

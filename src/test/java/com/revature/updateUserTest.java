@@ -1,5 +1,6 @@
 package com.revature;
 
+import com.revature.dtos.UpdateUserRequest;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import com.revature.services.UserService;
@@ -23,7 +24,7 @@ public class updateUserTest {
 
     @Test
     public void updateUser() throws Exception {
-        User u = new User(1, "email@email.com", "password", "Jay", "Byrd");
+        UpdateUserRequest u = new UpdateUserRequest(1, "email@email.com", "password", "Jay", "Byrd");
         userService.saveOrUpdateUser(u);
         Optional<User> user = userRepository.findByEmail(u.getEmail());
 
