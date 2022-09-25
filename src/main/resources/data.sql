@@ -1,18 +1,18 @@
 INSERT INTO profile(id, user_id, about_me, hobbies, something_else, profile_pic)
 values (1,
         1,
-        'about me',
-        'hobbies',
-        'something interesting',
+        'Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet sit amet cursus sit.',
+        'Gardening, Photography, Writing',
+        'The 57 on Heinz ketchup bottles represents the number of varieties of pickles the company once had. ',
         'https://i.imgur.com/RZrxsVG.jpeg');
 
 
 INSERT INTO profile(id, user_id, about_me, hobbies, something_else, profile_pic)
 values (2,
         2,
-        'about me test',
-        'hobbies',
-        'something interesting',
+        'Consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.',
+        'Reading, Baking, Painting',
+        'Isaac Asimov is the only author to have a book in every Dewey-decimal category.',
         'https://i.imgur.com/JR6noxf.jpeg');
 INSERT INTO users (id, email, password, first_name, last_name)
 VALUES (1,

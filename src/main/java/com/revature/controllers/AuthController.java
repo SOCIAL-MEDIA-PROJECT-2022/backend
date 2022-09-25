@@ -2,7 +2,6 @@ package com.revature.controllers;
 
 import com.revature.dtos.LoginRequest;
 import com.revature.dtos.RegisterRequest;
-import com.revature.models.Profile;
 import com.revature.models.User;
 import com.revature.services.AuthService;
 import org.springframework.http.HttpStatus;
@@ -18,10 +17,10 @@ import java.util.logging.Logger;
 @RequestMapping("/auth")
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class AuthController {
-	
-	private static final Logger logger = Logger.getLogger(AuthController.class.getName());
-	private static final Level logLevel = Level.INFO;
-	
+
+    private static final Logger logger = Logger.getLogger(AuthController.class.getName());
+    private static final Level logLevel = Level.INFO;
+
 
     private final AuthService authService;
 
@@ -31,10 +30,10 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody LoginRequest loginRequest, HttpSession session) {
-    	logger.log(logLevel,loginRequest.toString());
-    	
+        logger.log(logLevel, loginRequest.toString());
+
         Optional<User> optional = authService.findByCredentials(loginRequest.getEmail(), loginRequest.getPassword());
-        if(!optional.isPresent()) {
+        if (!optional.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
         session.setAttribute("user", optional.get());
