@@ -2,6 +2,7 @@ package com.revature.services;
 
 
 import com.revature.dtos.UpdateProfileRequest;
+import com.revature.exceptions.ProfileNotFoundException;
 import com.revature.models.Profile;
 import com.revature.repositories.ProfileRepository;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ public class ProfileService {
         logger.log(logLevel, request.toString());
         Optional<Profile> profile = profileRepository.findById(request.getId());
         Profile p = profile.orElse(null);
+        if(p == null) throw new ProfileNotFoundException();
         p.setAboutMe(request.getAboutMe());
         p.setHobbies(request.getHobbies());
         p.setSomethingElse(request.getSomethingElse());

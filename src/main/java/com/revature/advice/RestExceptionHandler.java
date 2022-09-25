@@ -1,6 +1,7 @@
 package com.revature.advice;
 
 import com.revature.exceptions.NotLoggedInException;
+import com.revature.exceptions.ProfileNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,5 +18,10 @@ public class RestExceptionHandler {
         String errorMessage = "Must be logged in to perform this action";
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorMessage);
+    }
+    @ExceptionHandler({ProfileNotFoundException.class})
+    public ResponseEntity<Object> handleProfileNotFoundExceptio(HttpServletRequest request, ProfileNotFoundException notFoundException){
+        String errorMessage = "The profile you are looking for could not be found";
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
     }
 }
