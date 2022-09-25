@@ -3,13 +3,15 @@ package com.revature.services;
 import com.revature.models.User;
 import org.springframework.stereotype.Service;
 
-import java.net.URI;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class AuthService {
-
     private final UserService userService;
+    private final Logger logger = Logger.getLogger(AuthService.class.getName());
+    private final Level logLevel = Level.INFO;
 
     public AuthService(UserService userService) {
         this.userService = userService;
@@ -20,6 +22,8 @@ public class AuthService {
     }
 
     public User register(User user) {
+        logger.log(logLevel, "Got here with: ");
+        logger.log(logLevel, user.toString());
         return userService.save(user);
     }
 }

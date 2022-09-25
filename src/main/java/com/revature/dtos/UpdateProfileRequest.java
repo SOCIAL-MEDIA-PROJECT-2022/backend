@@ -8,10 +8,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SearchReturn {
+public class UpdateProfileRequest {
     private int id;
-    private String email;
-    private String firstName;
-    private String lastName;
-
+    private int userId;
+    private String aboutMe;
+    private String hobbies;
+    private String somethingElse;
+    private String profilePic;
 }

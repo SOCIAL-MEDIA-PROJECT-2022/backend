@@ -17,10 +17,10 @@ import java.util.logging.Logger;
 @RequestMapping("/auth")
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class AuthController {
-	
-	private static final Logger logger = Logger.getLogger(AuthController.class.getName());
-	private static final Level logLevel = Level.INFO;
-	
+
+    private static final Logger logger = Logger.getLogger(AuthController.class.getName());
+    private static final Level logLevel = Level.INFO;
+
 
     private final AuthService authService;
 
@@ -30,18 +30,13 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody LoginRequest loginRequest, HttpSession session) {
-    	logger.log(logLevel,loginRequest.toString());
-    	
-        Optional<User> optional = authService.findByCredentials(loginRequest.getEmail(), loginRequest.getPassword());
+        logger.log(logLevel, loginRequest.toString());
 
-        if(!optional.isPresent()) {
+        Optional<User> optional = authService.findByCredentials(loginRequest.getEmail(), loginRequest.getPassword());
+        if (!optional.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
-
         session.setAttribute("user", optional.get());
-        
-     
-
         return ResponseEntity.ok(optional.get());
     }
 
@@ -54,14 +49,14 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody RegisterRequest registerRequest) {
+        logger.log(logLevel, "Got here with: ");
+        logger.log(logLevel, registerRequest.toString());
         User created = new User(0,
                 registerRequest.getEmail(),
                 registerRequest.getPassword(),
                 registerRequest.getFirstName(),
-                registerRequest.getLastName(),
-		        registerRequest.getProPict(),
-		        registerRequest.getAboutMe());
-
+                registerRequest.getLastName()
+        );
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(created));
     }
 }
