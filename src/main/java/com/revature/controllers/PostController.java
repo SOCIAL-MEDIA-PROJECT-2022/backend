@@ -2,7 +2,6 @@ package com.revature.controllers;
 
 import com.revature.annotations.Authorized;
 import com.revature.dtos.LikeRequest;
-import com.revature.dtos.PostRequest;
 import com.revature.models.Post;
 import com.revature.services.PostService;
 import org.springframework.http.ResponseEntity;

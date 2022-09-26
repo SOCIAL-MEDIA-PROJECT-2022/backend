@@ -33,7 +33,7 @@ public class PostService {
     public List<Post> getAll(Integer id) {
 
         Optional<User> user = userRepository.findById(id);
-        if(user.isEmpty()) throw new UserDoesNotExistException();
+        if (user.isEmpty()) throw new UserDoesNotExistException();
         List<Post> posts = postRepository.findAllByComment(false);
 
         List<Integer> followingId = new LinkedList<>();
