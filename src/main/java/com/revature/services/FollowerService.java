@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.dtos.FollowRequest;
+import com.revature.exceptions.UserDoesNotExistException;
 import com.revature.models.FollowerObject;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
@@ -27,36 +28,27 @@ public class FollowerService {
 
     public void follow(FollowRequest body) {
 
-        User currentUser = userRepository.getById(body.getId());
-
+        Optional<User> currentUser = userRepository.findById(body.getId());
+        if(currentUser.isEmpty()) throw new UserDoesNotExistException();
         Optional<User> following = userRepository.findByEmail(body.getEmail());
-        if (currentUser.getId() == following.get().getId()) {
+        if(following.isEmpty()) throw new UserDoesNotExistException();
+        if (currentUser.get().getId() == following.get().getId()) {
             return;
         }
 
         if (body.getState().equals("follow")) {
-            currentUser.getFollowing().add(new FollowerObject(following.get().getId(), following.get().getEmail()));
+            currentUser.get().getFollowing().add(new FollowerObject(following.get().getId(), following.get().getEmail()));
         } else {
             List<FollowerObject> newFollowers = new LinkedList<>();
-
-            for (FollowerObject u : currentUser.getFollowing()) {
+            for (FollowerObject u : currentUser.get().getFollowing()) {
                 if (!u.getEmail().equals(body.getEmail())) {
                     newFollowers.add(u);
                 }
 
             }
-            currentUser.setFollowing(newFollowers);
-
+            currentUser.get().setFollowing(newFollowers);
         }
-
-        //logger.log(Level.INFO, currentUser.toString());
-
-        //logger.log(Level.INFO, following.toString());
-
-
-        userRepository.save(currentUser);
-
-
+        userRepository.save(currentUser.get());
     }
 
 
