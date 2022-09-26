@@ -1,8 +1,8 @@
 package com.revature.services;
 
+import com.revature.dtos.ResetPasswordRequest;
 import com.revature.dtos.UpdateUserRequest;
 import com.revature.exceptions.UserDoesNotExistException;
-import com.revature.dtos.ResetPasswordRequest;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class UserService {
     public User saveOrUpdateUser(UpdateUserRequest request) {
         Optional<User> user = userRepository.findById(request.getId());
         User u = user.orElse(null);
-        if(u == null) throw new UserDoesNotExistException();
+        if (u == null) throw new UserDoesNotExistException();
         u.setEmail(request.getEmail());
         u.setPassword(request.getPassword());
         u.setFirstName(request.getFirstName());
@@ -37,10 +37,11 @@ public class UserService {
         userRepository.save(u);
         return u;
     }
+
     public void resetPassword(ResetPasswordRequest resetPasswordRequest) {
         Optional<User> user = userRepository.findByEmail(resetPasswordRequest.getEmail());
 
-        if(user.isPresent()){
+        if (user.isPresent()) {
             user.get().setPassword(resetPasswordRequest.getPassword());
             userRepository.save(user.get());
         }

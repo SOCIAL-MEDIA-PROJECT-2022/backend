@@ -3,7 +3,6 @@ package com.revature.controllers;
 
 import com.revature.annotations.Authorized;
 import com.revature.dtos.UpdateProfileRequest;
-import com.revature.exceptions.ProfileNotFoundException;
 import com.revature.models.Profile;
 import com.revature.services.ProfileService;
 import org.springframework.http.HttpStatus;
@@ -37,7 +36,6 @@ public class ProfileController {
         logger.log(logLevel, "Got here with: " + request.toString());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(profileService.saveOrUpdateProfile(request));
     }
-
 
 
 }

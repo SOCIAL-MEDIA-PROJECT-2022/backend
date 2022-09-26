@@ -28,7 +28,7 @@ public class AuthService {
         return userService.save(user);
     }
 
-    public void resetPassword (ResetPasswordRequest resetPasswordRequest){
-         userService.resetPassword(resetPasswordRequest);
+    public void resetPassword(ResetPasswordRequest resetPasswordRequest) {
+        userService.resetPassword(resetPasswordRequest);
     }
 }

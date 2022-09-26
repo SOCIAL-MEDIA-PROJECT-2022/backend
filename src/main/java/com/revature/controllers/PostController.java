@@ -1,12 +1,8 @@
 package com.revature.controllers;
 
 
-import java.util.List;
-import com.revature.dtos.LikeRequest;
-import com.revature.models.User;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import com.revature.annotations.Authorized;
+import com.revature.dtos.LikeRequest;
 import com.revature.models.Post;
 import com.revature.services.PostService;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +32,7 @@ public class PostController {
     public ResponseEntity<Post> upsertPost(@RequestBody Post post) {
         return ResponseEntity.ok(this.postService.upsert(post));
     }
+
     @Authorized
     @PatchMapping()
     public ResponseEntity<Post> updateLikes(@RequestBody LikeRequest request) {

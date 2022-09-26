@@ -23,11 +23,11 @@ public class ProfileService {
     }
 
     public Profile saveOrUpdateProfile(UpdateProfileRequest request) {
-        logger.log(logLevel,"Got to profile service");
+        logger.log(logLevel, "Got to profile service");
         logger.log(logLevel, request.toString());
         Optional<Profile> profile = profileRepository.findById(request.getId());
         Profile p = profile.orElse(null);
-        if(p == null) throw new ProfileNotFoundException();
+        if (p == null) throw new ProfileNotFoundException();
         p.setAboutMe(request.getAboutMe());
         p.setHobbies(request.getHobbies());
         p.setSomethingElse(request.getSomethingElse());
