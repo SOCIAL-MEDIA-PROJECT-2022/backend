@@ -1,7 +1,6 @@
 package com.revature.services;
 
 import com.revature.dtos.LikeRequest;
-import com.revature.dtos.PostRequest;
 import com.revature.exceptions.LikesException;
 import com.revature.exceptions.UserDoesNotExistException;
 import com.revature.models.FollowerObject;
@@ -31,15 +30,13 @@ public class PostService {
         this.userRepository = userRepository;
     }
 
-    public List<Post> getAll(PostRequest postRequest) {
+    public List<Post> getAll(Integer id) {
 
-        Optional<User> user = userRepository.findById(postRequest.getId());
+        Optional<User> user = userRepository.findById(id);
         if(user.isEmpty()) throw new UserDoesNotExistException();
         List<Post> posts = postRepository.findAllByComment(false);
 
         List<Integer> followingId = new LinkedList<>();
-
-
 
         for (FollowerObject u : user.get().getFollowing()) {
             followingId.add(u.getId());

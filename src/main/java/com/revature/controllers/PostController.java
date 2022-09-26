@@ -27,10 +27,10 @@ public class PostController {
     }
 
     @Authorized
-    @PostMapping
-    public ResponseEntity<List<Post>> getAllPosts(@RequestBody PostRequest postRequest) {
+    @GetMapping("/{val}")
+    public ResponseEntity<List<Post>> getAllPosts(@PathVariable String val) {
         logger.log(logLevel, "made it here");
-        return ResponseEntity.ok(this.postService.getAll(postRequest));
+        return ResponseEntity.ok(this.postService.getAll(Integer.valueOf(val)));
     }
 
     @Authorized
