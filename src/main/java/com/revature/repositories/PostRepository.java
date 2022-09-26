@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Post, Integer> {
+
+    List<Post> findAllByComment(boolean b);
+
     Optional<Post> findById(int id); // post id not user id
 
     Optional<List<Post>> findPostsByAuthor(User u);

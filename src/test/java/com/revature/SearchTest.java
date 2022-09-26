@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,7 +75,7 @@ class SearchTest {
 
         String pattern = "am";
 
-        User newUser = new User(1, "james@email.com", "password", "james", "walker");
+        User newUser = new User(1, "james@email.com", "password", "james", "walker", new ArrayList<>());
 
         userService.save(newUser);
 

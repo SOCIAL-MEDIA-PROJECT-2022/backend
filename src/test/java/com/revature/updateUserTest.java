@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.LinkedList;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,6 +25,7 @@ public class updateUserTest {
 
     @Test
     public void updateUser() throws Exception {
+        userService.save(new User(1, "email@email.com", "password", "Jay", "Byrd", new LinkedList<>()));
         UpdateUserRequest u = new UpdateUserRequest(1, "email@email.com", "password", "Jay", "Byrd");
         userService.saveOrUpdateUser(u);
         Optional<User> user = userRepository.findByEmail(u.getEmail());

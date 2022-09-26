@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.LinkedList;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,8 +58,10 @@ public class AuthController {
                 registerRequest.getEmail(),
                 registerRequest.getPassword(),
                 registerRequest.getFirstName(),
-                registerRequest.getLastName()
+                registerRequest.getLastName(),
+                new LinkedList<>()
         );
+
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(created));
     }
 
