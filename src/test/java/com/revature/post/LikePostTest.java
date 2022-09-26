@@ -28,7 +28,7 @@ public class LikePostTest {
 
 
     @Test
-    public void contextLoads() throws Exception {
+    void contextLoads() throws Exception {
         assertThat(postRepository).isNotNull();
         assertThat(postService).isNotNull();
         assertThat(userRepository).isNotNull();
@@ -36,7 +36,7 @@ public class LikePostTest {
     }
 
     @Test
-    public void getAllPosts() {
+    void getAllPosts() {
         Optional<List<Post>> allPosts = this.postRepository.findAllByTextNotNull();
         assertTrue(allPosts.isPresent());
         System.out.println(allPosts.get().size());

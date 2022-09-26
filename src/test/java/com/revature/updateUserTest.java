@@ -24,7 +24,7 @@ public class updateUserTest {
     private UserService userService;
 
     @Test
-    public void updateUser() throws Exception {
+     void updateUser() throws Exception {
         userService.save(new User(1, "email@email.com", "password", "Jay", "Byrd", new LinkedList<>()));
         UpdateUserRequest u = new UpdateUserRequest(1, "email@email.com", "password", "Jay", "Byrd");
         userService.saveOrUpdateUser(u);

@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.dtos.FollowRequest;
+
 import com.revature.dtos.FollowReturn;
 import com.revature.exceptions.UserDoesNotExistException;
 import com.revature.models.Follower;
@@ -11,11 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
 @Service
 public class FollowerService {
-    private static final Logger logger = Logger.getLogger(FollowerService.class.getName());
     private final UserRepository userRepository;
 
     public FollowerService(UserRepository userRepository) {

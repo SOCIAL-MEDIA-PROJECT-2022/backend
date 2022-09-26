@@ -27,7 +27,7 @@ public class FollowerController {
     @Authorized
     @GetMapping("/{var}")
     public ResponseEntity<List<FollowReturn>> getFollowers(@PathVariable String var) {
-        logger.log(Level.INFO, "Made it here to get followers");
+        logger.log(logLevel, "Made it here to get followers");
         return ResponseEntity.ok(this.followerService.getFollowers(Integer.valueOf(var)));
 
     }

@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class AuthService {
     private final UserService userService;
     private final Logger logger = Logger.getLogger(AuthService.class.getName());
-    private final Level logLevel = Level.INFO;
+    private static final Level logLevel = Level.INFO;
 
     public AuthService(UserService userService) {
         this.userService = userService;

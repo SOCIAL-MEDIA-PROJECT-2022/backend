@@ -36,12 +36,12 @@ class SearchTest {
 
 
     @Test
-    public void contextLoads() {
+     void contextLoads() {
         assertThat(controller).isNotNull();
     }
 
     @Test
-    public void search() {
+     void search() {
 
         String pattern = "test";
 
@@ -57,7 +57,7 @@ class SearchTest {
     }
 
     @Test
-    public void anotherSearch() {
+     void anotherSearch() {
 
         String pattern = "bob";
 
@@ -71,7 +71,7 @@ class SearchTest {
     }
 
     @Test
-    public void addAndSearch() {
+    void addAndSearch() {
 
         String pattern = "am";
 
