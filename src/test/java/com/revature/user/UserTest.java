@@ -22,12 +22,4 @@ public class UserTest {
     public void contextLoads() throws Exception {
         assertThat(userRepository).isNotNull();
     }
-    @Test
-    public void testFindByEmail() {
-        userRepository.save(new User(0,"testSpring@boot.com","password",
-                "TestSpring", "Boot"));
-        Optional<User> optional = this.userRepository.findByEmail("testSpring@boot.com");
-        assertTrue(optional.isPresent());
-        assertEquals("testSpring@boot.com", optional.get().getEmail());
-    }
 }

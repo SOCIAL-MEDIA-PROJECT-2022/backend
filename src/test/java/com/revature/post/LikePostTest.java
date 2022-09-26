@@ -40,32 +40,6 @@ public class LikePostTest {
         assertThat(userRepository).isNotNull();
 
     }
-    @Test
-    public void createUserForLike() {
-        userRepository.save(new User(0,"testSpringBoot@like.com","password",
-                "TestSpring", "BootLike"));
-        Optional<User> optional = this.userRepository.findByEmail("testSpringBoot@like.com");
-        assertTrue(optional.isPresent());
-        assertEquals("testSpringBoot@like.com", optional.get().getEmail());
-    }
-    @Test
-    public void createUserForPost() {
-        userRepository.save(new User(0,"testSpringBoot@post.com","password",
-                "TestSpring", "BootPost"));
-        Optional<User> optional = this.userRepository.findByEmail("testSpringBoot@post.com");
-        assertTrue(optional.isPresent());
-        assertEquals("testSpringBoot@post.com", optional.get().getEmail());
-    }
-
-    @Test
-    public void createAPostTest() {
-        Optional<User> optional = this.userRepository.findByEmail("testSpringBoot@post.com");
-        assertTrue(optional.isPresent());
-        assertEquals("testSpringBoot@post.com", optional.get().getEmail());
-        User testUser = optional.get();
-        postRepository.save(new Post(1, "I am making a test post.", "imageUrlTotallyExists",
-                new ArrayList<Post>(), testUser, new ArrayList<User>()));
-    }
 
     @Test
     public void getAllPosts(){
@@ -76,22 +50,5 @@ public class LikePostTest {
             System.out.println(p.getText());
     }
 
-    @Test
-    public void likePost() {
-        Optional<User> optional = this.userRepository.findByEmail("testSpringBoot@post.com");
-        assertTrue(optional.isPresent());
-        Optional<List<Post>> postsFromUser = this.postRepository.findPostsByAuthor(optional.get());
-        assertTrue(postsFromUser.isPresent());
-        Optional<User> optionalLike = this.userRepository.findByEmail("testSpringBoot@like.com");
-        assertTrue(optionalLike.isPresent());
-
-        LikeRequest optionalLikeAndOptionalPost = new LikeRequest(postsFromUser.get().get(0).getId(), optionalLike.get().getId());
-
-        // post controller needs to test a request
-        Post returnedlike = this.postService.updateLikes(optionalLikeAndOptionalPost);
-        // AFTER LIKE HAS BEEN SUBMITTED
-        assertTrue(returnedlike.getLikes().contains(optionalLike.get()));
-
-    }
 
 }
