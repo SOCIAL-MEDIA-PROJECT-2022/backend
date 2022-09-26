@@ -1,12 +1,14 @@
 package com.revature.services;
 
 import com.revature.dtos.FollowRequest;
+import com.revature.dtos.FollowReturn;
 import com.revature.exceptions.UserDoesNotExistException;
-import com.revature.models.FollowerObject;
+import com.revature.models.Follower;
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -21,9 +23,14 @@ public class FollowerService {
         this.userRepository = userRepository;
     }
 
-    public List<FollowRequest> getFollowers() {
-        // TODO Auto-generated method stub
-        return null;
+    public List<FollowReturn> getFollowers(Integer id) {
+        Optional<User> currentUser = userRepository.findById(id);
+        if(currentUser.isEmpty()) throw new UserDoesNotExistException();
+        List<FollowReturn> followers = new LinkedList<>();
+        for(Follower f : currentUser.get().getFollowing()){
+            followers.add(new FollowReturn(f.getId(), f.getEmail()));
+        }
+        return followers;
     }
 
     public void follow(FollowRequest body) {
@@ -36,11 +43,11 @@ public class FollowerService {
             return;
         }
 
-        if (body.getState().equals("follow")) {
-            currentUser.get().getFollowing().add(new FollowerObject(following.get().getId(), following.get().getEmail()));
+        if (body.getState().equalsIgnoreCase("follow")) {
+            currentUser.get().getFollowing().add(new Follower(following.get().getId(), following.get().getEmail()));
         } else {
-            List<FollowerObject> newFollowers = new LinkedList<>();
-            for (FollowerObject u : currentUser.get().getFollowing()) {
+            List<Follower> newFollowers = new LinkedList<>();
+            for (Follower u : currentUser.get().getFollowing()) {
                 if (!u.getEmail().equals(body.getEmail())) {
                     newFollowers.add(u);
                 }

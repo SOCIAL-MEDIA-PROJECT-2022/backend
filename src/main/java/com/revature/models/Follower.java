@@ -12,8 +12,8 @@ import javax.persistence.Table;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "follower_object")
-public class FollowerObject {
+@Table(name = "follower")
+public class Follower {
 
     @Id
     private int id;

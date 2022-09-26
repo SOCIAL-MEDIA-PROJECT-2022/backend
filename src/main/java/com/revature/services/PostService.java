@@ -3,7 +3,7 @@ package com.revature.services;
 import com.revature.dtos.LikeRequest;
 import com.revature.exceptions.LikesException;
 import com.revature.exceptions.UserDoesNotExistException;
-import com.revature.models.FollowerObject;
+import com.revature.models.Follower;
 import com.revature.models.Post;
 import com.revature.models.User;
 import com.revature.repositories.PostRepository;
@@ -38,7 +38,7 @@ public class PostService {
 
         List<Integer> followingId = new LinkedList<>();
 
-        for (FollowerObject u : user.get().getFollowing()) {
+        for (Follower u : user.get().getFollowing()) {
             followingId.add(u.getId());
         }
         followingId.add(user.get().getId());

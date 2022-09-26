@@ -2,6 +2,8 @@ package com.revature.controllers;
 
 import com.revature.annotations.Authorized;
 import com.revature.dtos.FollowRequest;
+import com.revature.dtos.FollowReturn;
+import com.revature.models.Follower;
 import com.revature.services.FollowerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +26,10 @@ public class FollowerController {
     }
 
     @Authorized
-    @GetMapping
-    public ResponseEntity<List<FollowRequest>> getFollowers() {
-        return ResponseEntity.ok(this.followerService.getFollowers());
+    @GetMapping("/{var}")
+    public ResponseEntity<List<FollowReturn>> getFollowers(@PathVariable String var) {
+        logger.log(Level.INFO,"Made it here to get followers");
+        return ResponseEntity.ok(this.followerService.getFollowers(Integer.valueOf(var)));
 
     }
 

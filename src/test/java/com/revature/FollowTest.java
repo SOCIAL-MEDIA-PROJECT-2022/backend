@@ -3,7 +3,7 @@ package com.revature;
 import com.revature.controllers.AuthController;
 import com.revature.controllers.FollowerController;
 import com.revature.dtos.FollowRequest;
-import com.revature.models.FollowerObject;
+import com.revature.models.Follower;
 import com.revature.models.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +30,12 @@ public class FollowTest {
     public void follow() throws Exception {
 
 
-        User currentUser = new User(1, "james@email.com", "password", "james", "walker", new ArrayList<FollowerObject>());
+        User currentUser = new User(1, "james@email.com", "password", "james", "walker", new ArrayList<Follower>());
 
 
-        User following = new User(2, "user@email.com", "password", "user", "test", new ArrayList<FollowerObject>());
+        User following = new User(2, "user@email.com", "password", "user", "test", new ArrayList<Follower>());
 
-        currentUser.getFollowing().add(new FollowerObject(following.getId(), following.getEmail()));
+        currentUser.getFollowing().add(new Follower(following.getId(), following.getEmail()));
 
 
         assertTrue(
