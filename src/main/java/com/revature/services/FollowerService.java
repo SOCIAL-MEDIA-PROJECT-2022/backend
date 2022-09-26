@@ -42,21 +42,20 @@ public class FollowerService {
         if (currentUser.get().getId() == following.get().getId()) {
             return;
         }
-
-        if (body.getState().equalsIgnoreCase("follow")) {
-            currentUser.get().getFollowing().add(new Follower(following.get().getId(), following.get().getEmail()));
-        } else {
-            List<Follower> newFollowers = new LinkedList<>();
-            for (Follower u : currentUser.get().getFollowing()) {
-                if (!u.getEmail().equals(body.getEmail())) {
-                    newFollowers.add(u);
-                }
-
-            }
-            currentUser.get().setFollowing(newFollowers);
-        }
+        currentUser.get().getFollowing().add(new Follower(following.get().getId(), following.get().getEmail()));
         userRepository.save(currentUser.get());
     }
 
+    public void unfollow(FollowRequest body){
+        Optional<User> currentUser = userRepository.findById(body.getId());
+        if(currentUser.isEmpty()) throw  new UserDoesNotExistException();
+        List<Follower> newFollowers = new LinkedList<>();
+        for(Follower u : currentUser.get().getFollowing()){
+            if(!u.getEmail().equals(body.getEmail())) newFollowers.add(u);
+        }
+        currentUser.get().setFollowing(newFollowers);
+        userRepository.save(currentUser.get());
+
+    }
 
 }

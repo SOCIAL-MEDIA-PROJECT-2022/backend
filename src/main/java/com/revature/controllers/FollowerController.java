@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @RestController
-@RequestMapping("/follow")
+@RequestMapping("/followers")
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class FollowerController {
     private static final Logger logger = Logger.getLogger(FollowerController.class.getName());
@@ -34,17 +34,18 @@ public class FollowerController {
     }
 
     @Authorized
-    @PatchMapping
+    @PatchMapping("/follow")
     public ResponseEntity<Void> follow(@RequestBody FollowRequest body) {
-
-
-        logger.log(logLevel, "authenticated user");
-        logger.log(logLevel, "userId: " + body.getId());
-        logger.log(logLevel, "followingId: " + body.getEmail());
-        logger.log(logLevel, "buttonState: " + body.getState());
         followerService.follow(body);
         return ResponseEntity.ok().build();
 
+    }
+
+    @Authorized
+    @PatchMapping("/unfollow")
+    public ResponseEntity<Void> unfollow(@RequestBody FollowRequest body){
+        followerService.unfollow(body);
+        return ResponseEntity.ok().build();
     }
 
 }

@@ -12,7 +12,4 @@ import lombok.Setter;
 public class FollowRequest {
     private Integer id;
     private String email;
-    private String state;
-
-
 }
