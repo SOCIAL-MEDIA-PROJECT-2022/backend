@@ -56,13 +56,11 @@ public class FollowTest {
         String email = "email@email.com";
 
 
-        FollowRequest followRequest = new FollowRequest(id, email, state);
+        FollowRequest followRequest = new FollowRequest(id, email);
 
         assertEquals(id, followRequest.getId());
 
         assertEquals(email, followRequest.getEmail());
-
-        assertEquals(state, followRequest.getState());
 
 
     }
