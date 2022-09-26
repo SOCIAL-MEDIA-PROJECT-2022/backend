@@ -23,4 +23,5 @@ public class User {
     private String lastName;
     @OneToMany(cascade = CascadeType.ALL)
     private List<FollowerObject> following;
+
 }

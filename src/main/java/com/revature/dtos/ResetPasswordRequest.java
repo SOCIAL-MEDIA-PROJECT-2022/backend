@@ -1,15 +1,14 @@
 package com.revature.dtos;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-public class PostRequest {
-    private Integer id;
 
+public class ResetPasswordRequest {
+    private String email;
+    private String password;
 }

@@ -1,18 +1,17 @@
 package com.revature.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-public class FollowRequest {
-    private Integer id;
+public class SearchReturn {
+    private int id;
     private String email;
-    private String state;
-
+    private String firstName;
+    private String lastName;
 
 }
