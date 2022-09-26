@@ -1,22 +1,23 @@
-
 package com.revature;
+
+import com.revature.controllers.AuthController;
 import com.revature.dtos.ResetPasswordRequest;
+import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import com.revature.services.AuthService;
 import com.revature.services.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.revature.controllers.AuthController;
-import com.revature.models.User;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class ResetPasswordTest {
