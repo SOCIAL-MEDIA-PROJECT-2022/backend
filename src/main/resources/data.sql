@@ -1,50 +1,128 @@
-INSERT INTO profile(id, user_id, about_me, hobbies, something_else, profile_pic)
-values (10000,
-        10000,
-        'Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet sit amet cursus sit.',
-        'Gardening, Photography, Writing',
-        'The 57 on Heinz ketchup bottles represents the number of varieties of pickles the company once had. ',
-        'https://i.imgur.com/RZrxsVG.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54321, 12345, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.', 'American-Foxhound', 'American-Foxhound', 'https://i.imgur.com/JLgDdtc.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54322, 12346, 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 'Rottweiler', 'Golden-Retriever', 'https://i.imgur.com/N2yfytR.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54323, 12347, 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 'Rottweiler', 'American-Foxhound', 'https://i.imgur.com/YYmI8Uz.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54324, 12348, 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', 'Boxer', 'American-Foxhound', 'https://i.imgur.com/rh4WWRU.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54325, 12349, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 'Havanese', 'Havanese', 'https://i.imgur.com/HVeWS8u.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54326, 12350, 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 'Rottweiler', 'Beagle', 'https://i.imgur.com/LlufyBf.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54327, 12351, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.', 'Brittany', 'Siberian-Husky', 'https://i.imgur.com/gqYGa3d.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54328, 12352, 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', 'Siberian-Husky', 'Boxer', 'https://i.imgur.com/JUXXf29.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54329, 12353, 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', 'Golden-Retriever', 'Golden-Retriever', 'https://i.imgur.com/kywMFou.jpeg');
+insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54330, 12354, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 'Brittany', 'Bulldog', 'https://i.imgur.com/NUEGgnl.jpeg');
 
 
-INSERT INTO profile(id, user_id, about_me, hobbies, something_else, profile_pic)
-values (10001,
-        10001,
-        'Consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.',
-        'Reading, Baking, Painting',
-        'Isaac Asimov is the only author to have a book in every Dewey-decimal category.',
-        'https://i.imgur.com/JR6noxf.jpeg');
-INSERT INTO users (id, email, password, first_name, last_name)
-VALUES (10000,
-        'testuser@gmail.com',
-        'password',
-        'Test',
-        'User');
+INSERT INTO users (id, email, password, first_name, last_name) VALUES (12345, 'J@lo.net', '123', 'Jay', 'Low');
+INSERT INTO users (id, email, password, first_name, last_name) VALUES (12346, 'K@lo.net', '123', 'Kay', 'Hey');
+INSERT INTO users (id, email, password, first_name, last_name) VALUES (12347, 'L@lo.net', '123', 'Lay', 'Long');
+insert into users (id, email, password, first_name, last_name) values (12348, 'sprince0@jigis.com', 'password', 'Shaylynn', 'Prince');
+insert into users (id, email, password, first_name, last_name) values (12349, 'bishevell1@jiathis.com', 'password', 'Brook', 'Shevell');
+insert into users (id, email, password, first_name, last_name) values (12350, 'jbeadon2@disdev.cn', 'password', 'Jeddy', 'Beadon');
+insert into users (id, email, password, first_name, last_name) values (12351, 'amatyatin3@cisco.com', 'password', 'Amalea', 'Matyatin');
+insert into users (id, email, password, first_name, last_name) values (12352, 'agartenfeldish4@ovh.net', 'password', 'Arte', 'Gartenfeld');
+insert into users (id, email, password, first_name, last_name) values (12353, 'uriscoald5@army.mil', 'password', 'Ula', 'Ricoald');
+insert into users (id, email, password, first_name, last_name) values (12354, 'disloat6@ycombinator.com', '123', 'Denni', 'Sloat');
 
-INSERT INTO users (id, email, password, first_name, last_name)
-VALUES (10001,
-        'usertest@gmail.com',
-        'password',
-        'User',
-        'Test');
 
-INSERT INTO posts (id, text, image_url, author_id, comment)
-VALUES (10000,
-        'The classic',
-        'https://i.imgur.com/fhgzVEt.jpeg',
-        10000, false),
-       (10001,
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        '',
-        10000, false),
-       (10002,
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        '',
-        10001, false);
-
+insert into posts (id, text, image_url, author_id, comment) values (10001, 'Division of joint capsule, ligament, or cartilage, foot and toe', 'https://i.imgur.com/9KqyVJR.jpeg', 12354, true);
+insert into posts (id, text, image_url, author_id, comment) values (10011, 'Goniotomy with goniopuncture', 'https://i.imgur.com/f6nA4Zz.png', 12354, true);
+insert into posts (id, text, image_url, author_id, comment) values (10002, 'Other soft tissue x-ray of face, head, and neck', 'https://i.imgur.com/qhRf77y.jpeg', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10003, 'Reattachment of tendon', 'https://i.imgur.com/93ChdNu.jpeg', 12345, true);
+insert into posts (id, text, image_url, author_id, comment) values (10004, 'Injection of therapeutic substance into tendon', 'https://i.imgur.com/N2yfytR.jpeg', 12345, false);
+insert into posts (id, text, image_url, author_id, comment) values (10005, 'Pelecans onocratalus', 'https://i.imgur.com/jGDFTlo.jpeg', 12345, false);
+insert into posts (id, text, image_url, author_id, comment) values (10006, 'Bucephala clangula', 'https://i.imgur.com/Db0VYry.jpeg', 12346, false);
+insert into posts (id, text, image_url, author_id, comment) values (10007, 'Marmota caligata', 'https://i.imgur.com/f6nA4Zz.png', 12346, false);
+insert into posts (id, text, image_url, author_id, comment) values (10008, 'Acridotheres tristis', 'https://i.imgur.com/VhuSf5X.jpeg', 12349, false);
+insert into posts (id, text, image_url, author_id, comment) values (10009, 'Dolichitus patagonum', 'https://i.imgur.com/uXbbbDJ.jpeg', 12349, false);
+insert into posts (id, text, image_url, author_id, comment) values (10010, 'Leptochloa decipiens (R. Br.) Stapf ex Maiden ssp. peacockii (Maiden & Betche) N. Snow', 'https://i.imgur.com/4h85U74.jpeg', 12351, false);
+insert into posts (id, text, image_url, author_id, comment) values (10016, 'Chorizanthe cuspidata S. Watson var. villosa (Eastw.) Munz', 'https://i.imgur.com/bVYq924.jpeg', 12348, true);
+insert into posts (id, text, image_url, author_id, comment) values (10012, 'Eupatorium resinosum Torr. ex DC.', 'https://i.imgur.com/xyPtn4m.jpeg', 12351, true);
+insert into posts (id, text, image_url, author_id, comment) values (10013, 'Gentianopsis virgata (Raf.) Holub', 'https://i.imgur.com/XeOEzm8.jpeg', 12347, false);
+insert into posts (id, text, image_url, author_id, comment) values (10014, 'Dicranum fuscescens Turner var. fuscescens', 'https://i.imgur.com/T0nH4dV.jpeg', 12348, false);
+insert into posts (id, text, image_url, author_id, comment) values (10015, 'Lobelia puberula Michx. var. mineolana E. Wimm.', 'https://i.imgur.com/JVzvl0t.jpeg', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10017, 'Tetraplasandra waialealae Rock', 'https://i.imgur.com/7Z8gBjo.jpeg', 12353, true);
+insert into posts (id, text, image_url, author_id, comment) values (10018, 'Venturiella sinensis (Vent.) Müll. Hal. var. angustiannulata Griffin & Sharp ex Griffin', 'AcD7fZU', 12347, false);
+insert into posts (id, text, image_url, author_id, comment) values (10019, 'Bothriochloa springfieldii (Gould) Parodi', 'y6sVce', 12348, false);
+insert into posts (id, text, image_url, author_id, comment) values (10020, 'Fremontodendron decumbens R. Lloyd', 'https://i.imgur.com/Dy24hGC.jpeg', 12354, true);
+insert into posts (id, text, image_url, author_id, comment) values (10021, 'Chamaesyce trachysperma (Engelm.) Millsp.', 'hUbFzv', 12346, false);
+insert into posts (id, text, image_url, author_id, comment) values (10022, 'Agoseris ×montana Osterh. (pro sp.)', 'p6u9sPIgPi', 12351, true);
+insert into posts (id, text, image_url, author_id, comment) values (10023, 'Pyrola elliptica Nutt.', 'JjulGVlxnPZ', 12346, true);
+insert into posts (id, text, image_url, author_id, comment) values (10024, 'Githopsis diffusa A. Gray ssp. diffusa', 'lCyKsgggL', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10025, '×Dupoa labradorica (Steud.) J. Cay. & Darbyshire', '0hxnBh3DQL', 12353, false);
+insert into posts (id, text, image_url, author_id, comment) values (10026, 'Ocotea portoricensis Mez', '5LgF5Nb4xNW', 12347, true);
+insert into posts (id, text, image_url, author_id, comment) values (10027, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'IzCDQ2rVcDq', 12345, true);
+insert into posts (id, text, image_url, author_id, comment) values (10028, null, 'https://i.imgur.com/G8lxOzL.jpeg', 12351, false);
+insert into posts (id, text, image_url, author_id, comment) values (10029, null, 'https://i.imgur.com/7Z8gBjo.jpeg', 12351, true);
+insert into posts (id, text, image_url, author_id, comment) values (10030, null, 'KuBoodyTrPY', 12345, false);
+insert into posts (id, text, image_url, author_id, comment) values (10031, null, 'https://i.imgur.com/7Z8gBjo.jpeg', 12353, false);
+insert into posts (id, text, image_url, author_id, comment) values (10032, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'fo38Gk9xEuL', 12347, false);
+insert into posts (id, text, image_url, author_id, comment) values (10033, null, 'https://i.imgur.com/G8lxOzL.jpeg', 12350, true);
+insert into posts (id, text, image_url, author_id, comment) values (10034, null, 'https://i.imgur.com/lS3QDYl.jpeg', 12354, false);
+insert into posts (id, text, image_url, author_id, comment) values (10035, null, 'https://i.imgur.com/lS3QDYl.jpeg', 12354, false);
+insert into posts (id, text, image_url, author_id, comment) values (10036, null, '59s6qKXJBC', 12354, true);
+insert into posts (id, text, image_url, author_id, comment) values (10037, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'SEuT44wP4mH', 12345, true);
+insert into posts (id, text, image_url, author_id, comment) values (10038, null, 'https://i.imgur.com/Dy24hGC.jpeg', 12347, true);
+insert into posts (id, text, image_url, author_id, comment) values (10039, null, ' https://i.imgur.com/lS3QDYl.jpeg', 12351, false);
+insert into posts (id, text, image_url, author_id, comment) values (10040, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'IoWu4MBN9C', 12347, true);
+insert into posts (id, text, image_url, author_id, comment) values (10041, null, ' https://i.imgur.com/lS3QDYl.jpeg', 12352, true);
+insert into posts (id, text, image_url, author_id, comment) values (10042, null, ' https://i.imgur.com/lS3QDYl.jpeg', 12345, false);
+insert into posts (id, text, image_url, author_id, comment) values (10043, null, 'https://i.imgur.com/uxntcyN.jpeg', 12347, true);
+insert into posts (id, text, image_url, author_id, comment) values (10044, null, 'https://i.imgur.com/Dy24hGC.jpeg', 12350, true);
+insert into posts (id, text, image_url, author_id, comment) values (10045, null, 'dkF74x', 12350, true);
+insert into posts (id, text, image_url, author_id, comment) values (10046, null, 'wYv5CO', 12350, false);
+insert into posts (id, text, image_url, author_id, comment) values (10047, null, 'https://i.imgur.com/uxntcyN.jpeg', 12347, false);
+insert into posts (id, text, image_url, author_id, comment) values (10048, null, 'F6V63sen7u', 12350, true);
+insert into posts (id, text, image_url, author_id, comment) values (10049, null, 'Izcl9xs', 12352, true);
+insert into posts (id, text, image_url, author_id, comment) values (10050, null, 'https://i.imgur.com/uxntcyN.jpeg', 12347, false);
+insert into posts (id, text, image_url, author_id, comment) values (10051, null, 'https://i.imgur.com/Dy24hGC.jpeg', 12346, true);
+insert into posts (id, text, image_url, author_id, comment) values (10052, null, 'MX8BeQS', 12347, true);
+insert into posts (id, text, image_url, author_id, comment) values (10053, null, 'Xn3GIGT59rSG', 12352, true);
+insert into posts (id, text, image_url, author_id, comment) values (10054, null, 'W9D7xbqQJ', 12353, false);
+insert into posts (id, text, image_url, author_id, comment) values (10055, null, 'GukuyUqF8', 12351, false);
+insert into posts (id, text, image_url, author_id, comment) values (10056, null, 'https://i.imgur.com/vYfMmO0.jpeg', 12346, false);
+insert into posts (id, text, image_url, author_id, comment) values (10057, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', '2L9yL0', 12345, false);
+insert into posts (id, text, image_url, author_id, comment) values (10058, null, 'znHVSpMV', 12351, false);
+insert into posts (id, text, image_url, author_id, comment) values (10059, null, 'ze3GRTbJzPd', 12345, false);
+insert into posts (id, text, image_url, author_id, comment) values (10060, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'cIq3Df1vQS', 12352, false);
+insert into posts (id, text, image_url, author_id, comment) values (10061, null, 'https://i.imgur.com/G8lxOzL.jpeg', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10062, null, 'DLgcc1lqdC9', 12351, true);
+insert into posts (id, text, image_url, author_id, comment) values (10063, null, 'https://i.imgur.com/lS3QDYl.jpeg', 12354, false);
+insert into posts (id, text, image_url, author_id, comment) values (10064, null, 'Jqc0yq', 12347, true);
+insert into posts (id, text, image_url, author_id, comment) values (10065, null, ' https://i.imgur.com/lS3QDYl.jpeg', 12353, true);
+insert into posts (id, text, image_url, author_id, comment) values (10066, null, 'https://i.imgur.com/Dy24hGC.jpeg', 12354, true);
+insert into posts (id, text, image_url, author_id, comment) values (10067, null, 'AJ8AskrO9S8', 12352, false);
+insert into posts (id, text, image_url, author_id, comment) values (10068, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'p9ZDCs0RG', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10069, null, 'jJQwvd0', 12345, true);
+insert into posts (id, text, image_url, author_id, comment) values (10070, null, 'https://i.imgur.com/zLz9ZJC.jpeg', 12352, true);
+insert into posts (id, text, image_url, author_id, comment) values (10071, null, ' https://i.imgur.com/lS3QDYl.jpeg', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10072, null, 'gsgWEHKLU', 12353, false);
+insert into posts (id, text, image_url, author_id, comment) values (10073, null, 'Z4jZJlNtXJX', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10074, null, 'https://i.imgur.com/G8lxOzL.jpeg', 12348, true);
+insert into posts (id, text, image_url, author_id, comment) values (10075, null, '3pLIWYTa8', 12352, false);
+insert into posts (id, text, image_url, author_id, comment) values (10076, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'ZaAtt4Jc9K', 12346, true);
+insert into posts (id, text, image_url, author_id, comment) values (10077, null, 'https://i.imgur.com/zLz9ZJC.jpeg', 12345, true);
+insert into posts (id, text, image_url, author_id, comment) values (10078, null, 'XeQSO1', 12346, false);
+insert into posts (id, text, image_url, author_id, comment) values (10079, null, 'https://i.imgur.com/OpRK62f.jpeg', 12352, false);
+insert into posts (id, text, image_url, author_id, comment) values (10080, null, 'https://i.imgur.com/Dy24hGC.jpeg', 12349, true);
+insert into posts (id, text, image_url, author_id, comment) values (10081, null, 'vSe3bsSJh', 12345, true);
+insert into posts (id, text, image_url, author_id, comment) values (10082, null, '8SKFzfDwGf', 12353, true);
+insert into posts (id, text, image_url, author_id, comment) values (10083, null, 'https://i.imgur.com/G8lxOzL.jpeg', 12349, false);
+insert into posts (id, text, image_url, author_id, comment) values (10084, null, ' https://i.imgur.com/lS3QDYl.jpeg', 12352, false);
+insert into posts (id, text, image_url, author_id, comment) values (10085, null, 'https://i.imgur.com/vYfMmO0.jpeg', 12346, true);
+insert into posts (id, text, image_url, author_id, comment) values (10086, null, 'OSPo4LsGXt', 12345, true);
+insert into posts (id, text, image_url, author_id, comment) values (10087, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'oEMPBYDOe', 12348, true);
+insert into posts (id, text, image_url, author_id, comment) values (10088, null, 'pxMBu5xMTj', 12352, false);
+insert into posts (id, text, image_url, author_id, comment) values (10089, null, 'WQpiH5', 12353, false);
+insert into posts (id, text, image_url, author_id, comment) values (10090, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'NIa0kwOJ', 12349, false);
+insert into posts (id, text, image_url, author_id, comment) values (10091, null, 'https://i.imgur.com/G8lxOzL.jpeg', 12350, true);
+insert into posts (id, text, image_url, author_id, comment) values (10092, null, 'https://i.imgur.com/OpRK62f.jpeg', 12349, false);
+insert into posts (id, text, image_url, author_id, comment) values (10093, null, 'https://i.imgur.com/OpRK62f.jpeg', 12352, true);
+insert into posts (id, text, image_url, author_id, comment) values (10094, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'E4sxJWsV3fy', 12346, false);
+insert into posts (id, text, image_url, author_id, comment) values (10095, null, 'https://i.imgur.com/7Z8gBjo.jpeg', 12346, true);
+insert into posts (id, text, image_url, author_id, comment) values (10096, null, 'https://i.imgur.com/OpRK62f.jpeg', 12347, true);
+insert into posts (id, text, image_url, author_id, comment) values (10097, null, 'https://i.imgur.com/zLz9ZJC.jpeg', 12353, true);
+insert into posts (id, text, image_url, author_id, comment) values (10098, null, 'https://i.imgur.com/Dy24hGC.jpeg', 12351, false);
+insert into posts (id, text, image_url, author_id, comment) values (10099, null, 'https://i.imgur.com/Dy24hGC.jpeg', 12351, false);
+insert into posts (id, text, image_url, author_id, comment) values (10100, null, 'https://i.imgur.com/7Z8gBjo.jpeg', 12350, false);
 
 INSERT INTO likes (id, email)
-VALUES (10000,
-        10000);
+VALUES (10001,
+        12346);
