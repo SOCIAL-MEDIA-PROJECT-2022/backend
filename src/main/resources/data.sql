@@ -9,7 +9,7 @@ insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic
 insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54329, 12353, 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', 'Golden-Retriever', 'Golden-Retriever', 'https://i.imgur.com/kywMFou.jpeg');
 insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54330, 12354, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 'Brittany', 'Bulldog', 'https://i.imgur.com/NUEGgnl.jpeg');
 
-INSERT INTO users (id, email, password, first_name, last_name) VALUES (12344, 'J@lo.net', '123', 'Jay', 'Low');
+INSERT INTO users (id, email, password, first_name, last_name) VALUES (12344, 'J@lo.net', '123', 'Jay', 'Lowe');
 
 --https://media.istockphoto.com/photos/dog-watching-tv-on-the-couch-picture-id680810342?k=20&m=680810342&s=612x612&w=0&h=wQVeNcnq0CIqpGK88zA-pqmzbyK_6diiHR7kAq5PbxQ=
 
@@ -25,7 +25,7 @@ insert into users (id, email, password, first_name, last_name) values (12353, 'u
 insert into users (id, email, password, first_name, last_name) values (12354, 'disloat6@ycombinator.com', '123', 'Denni', 'Sloat');
 
 
-insert into posts (id, text, image_url, author_id, comment) values (10001, 'Division of joint capsule, ligament, or cartilage, foot and toe', 'https://i.imgur.com/9KqyVJR.jpeg', 12354, true);
+insert into posts (id, text, image_url, author_id, comment) values (10001, 'Division of joint capsule, ligament, or cartilage, foot and toe', 'https://i.imgur.com/NUEGgnl.jpeg', 12354, true);
 insert into posts (id, text, image_url, author_id, comment) values (10011, 'Goniotomy with goniopuncture', 'https://i.imgur.com/f6nA4Zz.png', 12354, true);
 insert into posts (id, text, image_url, author_id, comment) values (10002, 'Other soft tissue x-ray of face, head, and neck', 'https://i.imgur.com/qhRf77y.jpeg', 12349, true);
 insert into posts (id, text, image_url, author_id, comment) values (10003, 'Reattachment of tendon', 'https://i.imgur.com/93ChdNu.jpeg', 12345, true);
@@ -58,7 +58,7 @@ insert into posts (id, text, image_url, author_id, comment) values (10030, null,
 insert into posts (id, text, image_url, author_id, comment) values (10031, null, 'https://i.imgur.com/7Z8gBjo.jpeg', 12353, false);
 insert into posts (id, text, image_url, author_id, comment) values (10032, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'fo38Gk9xEuL', 12347, false);
 insert into posts (id, text, image_url, author_id, comment) values (10033, null, 'https://i.imgur.com/G8lxOzL.jpeg', 12350, true);
-insert into posts (id, text, image_url, author_id, comment) values (10034, null, 'https://i.imgur.com/lS3QDYl.jpeg', 12354, false);
+insert into posts (id, text, image_url, author_id, comment) values (10034, null, 'https://i.imgur.com/NUEGgnl.jpeg', 12354, false);
 insert into posts (id, text, image_url, author_id, comment) values (10035, null, 'https://i.imgur.com/lS3QDYl.jpeg', 12354, false);
 insert into posts (id, text, image_url, author_id, comment) values (10036, null, '59s6qKXJBC', 12354, true);
 insert into posts (id, text, image_url, author_id, comment) values (10037, 'Geum triflorum Pursh var. campanulatum (Greene) C.L. Hitchc.', 'SEuT44wP4mH', 12345, true);
