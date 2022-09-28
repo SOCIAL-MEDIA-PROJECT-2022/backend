@@ -5,6 +5,8 @@ import com.revature.controllers.FollowerController;
 import com.revature.dtos.FollowRequest;
 import com.revature.models.Follower;
 import com.revature.models.User;
+import com.revature.services.FollowerService;
+import com.revature.services.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 public class FollowTest {
 
-
     @Autowired
     private FollowerController followerController;
 
@@ -25,10 +26,15 @@ public class FollowTest {
     @Autowired
     private AuthController authController;
 
+    @Autowired
+    private FollowerService followerService;
+    @Autowired
+    private UserService userService;
+
+
 
     @Test
     public void follow() throws Exception {
-
 
         User currentUser = new User(1, "james@email.com", "password", "james", "walker", new ArrayList<Follower>());
 
@@ -64,6 +70,4 @@ public class FollowTest {
 
 
     }
-
-
 }

@@ -1,7 +1,6 @@
 package com.revature.services;
 
 import com.revature.dtos.FollowRequest;
-
 import com.revature.dtos.FollowReturn;
 import com.revature.exceptions.UserDoesNotExistException;
 import com.revature.models.Follower;

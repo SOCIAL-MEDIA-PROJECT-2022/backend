@@ -67,7 +67,6 @@ public class PostService {
         Optional<User> user = userRepository.findById(request.getUserId());
 
         if (post.isPresent() && user.isPresent()) {
-
             if (post.get().getLikes().contains(user.get())) {
                 post.get().getLikes().remove(user.get());
 
