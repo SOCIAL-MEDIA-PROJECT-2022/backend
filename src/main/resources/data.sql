@@ -9,8 +9,8 @@ insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic
 insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54329, 12353, 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', 'Golden-Retriever', 'Golden-Retriever', 'https://i.imgur.com/kywMFou.jpeg');
 insert into profile (id, user_id, about_me, hobbies, something_else, profile_pic) values (54330, 12354, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 'Brittany', 'Bulldog', 'https://i.imgur.com/NUEGgnl.jpeg');
 
-
-INSERT INTO users (id, email, password, first_name, last_name) VALUES (12345, 'J@lo.net', '123', 'Jay', 'Low');
+INSERT INTO users (id, email, password, first_name, last_name) VALUES (12344, 'J@lo.net', '123', 'Jay', 'Low');
+INSERT INTO users (id, email, password, first_name, last_name) VALUES (12345, 'M@lo.net', '123', 'Maybe', 'Owl');
 INSERT INTO users (id, email, password, first_name, last_name) VALUES (12346, 'K@lo.net', '123', 'Kay', 'Hey');
 INSERT INTO users (id, email, password, first_name, last_name) VALUES (12347, 'L@lo.net', '123', 'Lay', 'Long');
 insert into users (id, email, password, first_name, last_name) values (12348, 'sprince0@jigis.com', 'password', 'Shaylynn', 'Prince');
